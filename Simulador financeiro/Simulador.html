@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Simulador.css">
+    <title>Simulador Financeiro</title>
+</head>
+
+<body style="background-image: url(Fundo.png);">
+    <div class="Simulador">
+        <h1>PLANOS</h1>
+        <input id="sensor" placeholder="Número de sensores" type="text">
+        <br><br>
+        <button style="float: left;" onclick="mensal()">MENSAL</button>
+        <button style="float: left;" onclick="semestral()">SEMESTRAL</button>
+        <button style="float: left;" onclick="anual()">ANUAL</button>
+        <br><br>
+        <b id="span_msg"></b>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function mensal() {
+        var sensorid = Number(sensor.value);
+        var sensores = sensorid * 100;
+        var planomensal = sensores + 200 + 400;
+        span_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
+            Valor da da instalação é de <u style="color: lime;">R$ 200.</u> <br>
+            Valor do plano mensal é de <u style="color: lime;">R$ 400.</u> <br>
+            Valor final: <u style="color: lime;">R$ ${planomensal}</u>`;
+    }
+    function semestral() {
+        var sensorid = Number(sensor.value);
+        var sensores = sensorid * 100;
+        var planomensal = sensores + 200 + 2400;
+        span_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
+            Valor da da instalação é de <u style="color: lime;">R$ 200.</u> <br>
+            Valor do plano semestral é de <u style="color: lime;">R$ 2.400.</u> <br>
+            Valor final: <u style="color: lime;">R$ ${planomensal}</u>`;
+    }
+    function anual() {
+        var sensorid = Number(sensor.value);
+        var sensores = sensorid * 100;
+        var planomensal = sensores + 200 + 4800;
+        span_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
+            Valor da da instalação é de <u style="color: lime;">R$ 200.</u> <br>
+            Valor do plano anual é de <u style="color: lime;">R$ 4.800.</u> <br>
+            Valor final: <u style="color: lime;">R$ ${planomensal}</u>`;
+    }
+</script>
