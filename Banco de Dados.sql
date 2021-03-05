@@ -32,5 +32,16 @@ INSERT INTO Cadastro VALUES
 (null, 'Clodoalda Rodrigues' , '81918216053', '1962-11-27', 'cloclorodri@terra.com.br', '51981817171', '69307600', 'Rua José Celestino da Luz', 10, 'Roraima', 'Boa Vista'),
 (null,'Elaine Ferreira','40028922175','1973-01-26','laineabencoada@hotmail.com','1147654272855','09361110','Rua primavera de Jesus',840,'São Paulo','Mauá');
 
+CREATE TABLE Estufas (
+idEstufa int primary key auto_increment,
+statusEstufa varchar(10),
+temperatura int
+);
 
+INSERT INTO Estufas VALUES
+(null, 'ativo', 20),
+(null, 'ativo', 18),
+(null, 'ativo', 25),
+(null, 'desativado', 5);
 
+select * from Estufas;
