@@ -29,6 +29,8 @@ INSERT INTO Cadastro VALUES
 (null, 'José Felipe', '31938319052', '1985-06-14', 'josefelipe@gmail.com', '21931215321', '27555970', 'Avenida Boa Vista', 23, 'Rio de Janeiro', 'Engenheiro Passos'),
 (null, 'Nicolas Silva' , '37010350086', '1990-04-07', 'nicolassilva90@uol.com.br', '51987452125', '47813108', 'Rua Antônio Lúcio Peixoto', 1425, 'Bahia', 'Barreiras'),
 (null, 'José Pinto' , '19714151031', '1982-05-17', 'zepinto@bol.com.br', '51981818989', '76801834', 'Rua Bocaiúva', 57, 'Rondônia', 'Porto Velho'),
-(null, 'Clodoalda Rodrigues' , '81918216053', '1962-11-27', 'cloclorodri@terra.com.br', '51981817171', '69307600', 'Rua José Celestino da Luz', 10, 'Roraima', 'Boa Vista');
+(null, 'Clodoalda Rodrigues' , '81918216053', '1962-11-27', 'cloclorodri@terra.com.br', '51981817171', '69307600', 'Rua José Celestino da Luz', 10, 'Roraima', 'Boa Vista'),
+(null,'Elaine Ferreira','40028922175','1973-01-26','laineabencoada@hotmail.com','1147654272855','09361110','Rua primavera de Jesus',840,'São Paulo','Mauá');
+
 
 
