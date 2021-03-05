@@ -6,7 +6,7 @@ body {
 }
 
 /* Style da div (caixa), arrumando a posição na tela, centralizando e modificando a cor. */
-.Simulador {
+.Caixa {
    width: 495px;
    padding: 40px;
    position: absolute;
@@ -18,13 +18,13 @@ body {
 }
 
 /* Style do h1 (texto parrudo) mudando a cor para branco e a fonte. */
-.Simulador h1 {
+.Caixa h1 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Style do input, tirando a borda, deixando apenas a debaixo, cor branca, fundo transparente. */
-.Simulador input {
+.Caixa input {
     border: none;
     border-bottom: 2px solid white;
     background-color: transparent;
@@ -34,7 +34,7 @@ body {
 }
 
 /* Style dos botões, aumentando o espaço entre eles, dando cor, aumentando o tamanho dos botões, mudando a cor. */
-.Simulador button {
+.Caixa button {
     border-radius: 24px;
     margin: 10px;
     background-color: #254b3e;
@@ -45,13 +45,13 @@ body {
 }
 
 /* Mudança da cor quando passar o mouse em cima dos botões. */
-.Simulador button:hover {
+.Caixa button:hover {
     background-color: #113025;
     border: 2px solid #113025;
 }
 
 /* Style do b (bold), modificando a fonte e a cor. */
-.Simulador b{
+.Caixa b{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }

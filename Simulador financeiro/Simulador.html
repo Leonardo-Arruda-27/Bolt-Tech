@@ -10,15 +10,15 @@
 </head>
 
 <body style="background-image: url(Fundo.png);">
-    <div class="Simulador">
+    <div class="Caixa">
         <h1>PLANOS</h1>
-        <input id="sensor" placeholder="Número de sensores" type="text">
+        <input id="idsensor" placeholder="Número de sensores" type="text">
         <br><br>
         <button style="float: left;" onclick="mensal()">MENSAL</button>
         <button style="float: left;" onclick="semestral()">SEMESTRAL</button>
         <button style="float: left;" onclick="anual()">ANUAL</button>
         <br><br>
-        <b id="span_msg"></b>
+        <b id="plano_msg"></b>
     </div>
 </body>
 
@@ -26,28 +26,28 @@
 
 <script>
     function mensal() {
-        var sensorid = Number(sensor.value);
-        var sensores = sensorid * 100;
+        var sensor = Number(idsensor.value);
+        var sensores = sensor * 100;
         var planomensal = sensores + 200 + 400;
-        span_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
+        plano_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
             Valor da da instalação é de <u style="color: lime;">R$ 200.</u> <br>
             Valor do plano mensal é de <u style="color: lime;">R$ 400.</u> <br>
             Valor final: <u style="color: lime;">R$ ${planomensal}</u>`;
     }
     function semestral() {
-        var sensorid = Number(sensor.value);
-        var sensores = sensorid * 100;
+        var sensor = Number(idsensor.value);
+        var sensores = sensor * 100;
         var planomensal = sensores + 200 + 2400;
-        span_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
+        plano_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
             Valor da da instalação é de <u style="color: lime;">R$ 200.</u> <br>
             Valor do plano semestral é de <u style="color: lime;">R$ 2.400.</u> <br>
             Valor final: <u style="color: lime;">R$ ${planomensal}</u>`;
     }
     function anual() {
-        var sensorid = Number(sensor.value);
-        var sensores = sensorid * 100;
+        var sensor = Number(idsensor.value);
+        var sensores = sensor * 100;
         var planomensal = sensores + 200 + 4800;
-        span_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
+        plano_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores}.</u> <br>
             Valor da da instalação é de <u style="color: lime;">R$ 200.</u> <br>
             Valor do plano anual é de <u style="color: lime;">R$ 4.800.</u> <br>
             Valor final: <u style="color: lime;">R$ ${planomensal}</u>`;
