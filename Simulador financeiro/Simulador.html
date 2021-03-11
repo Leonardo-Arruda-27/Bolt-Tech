@@ -40,21 +40,21 @@
     function semestral() {
         var sensor = Number(idsensor.value);
         var sensores = sensor * 100;
-        var planomensal = sensores + 200 + 2400;
+        var planosemestral = sensores + 200 + 2400;
 
         plano_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores.toFixed(2)}</u> <br><br>
             Valor da da instalação é de <u style="color: lime;">R$ 200.00</u> <br><br>
             Valor do plano semestral é de <u style="color: lime;">R$ 2400.00</u> <br><br>
-            Valor final: <u style="color: lime;">R$ ${planomensal.toFixed(2)}</u>`;
+            Valor final: <u style="color: lime;">R$ ${planosemestral.toFixed(2)}</u>`;
     }
     function anual() {
         var sensor = Number(idsensor.value);
         var sensores = sensor * 100;
-        var planomensal = sensores + 200 + 4800;
+        var planoanual = sensores + 200 + 4800;
 
         plano_msg.innerHTML = `Valor dos sensores é de <u style="color: lime;">R$ ${sensores.toFixed(2)}</u> <br><br>
             Valor da da instalação é de <u style="color: lime;">R$ 200.00</u> <br><br>
             Valor do plano anual é de <u style="color: lime;">R$ 4800.00</u> <br><br>
-            Valor final: <u style="color: lime;">R$ ${planomensal.toFixed(2)}</u>`;
+            Valor final: <u style="color: lime;">R$ ${planoanual.toFixed(2)}</u>`;
     }
 </script>
