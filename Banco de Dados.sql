@@ -17,7 +17,7 @@ rua varchar(100),
 numero int,
 estado varchar(20),
 cidade varchar(20)
-);
+)auto_increment = 1000;
 
 -- Selecionar a tabela criada.
 SELECT * FROM Cadastro;
@@ -34,14 +34,31 @@ INSERT INTO Cadastro VALUES
 
 CREATE TABLE Estufas (
 idEstufa int primary key auto_increment,
-statusEstufa varchar(10),
-temperatura int
+nomeEstufa varchar(50),
+faseEstufa varchar(10),
+dataTemperatura dateTime
 );
 
+
 INSERT INTO Estufas VALUES
-(null, 'ativo', 20),
-(null, 'ativo', 18),
-(null, 'ativo', 25),
-(null, 'desativado', 5);
+(null, 'A', 'verde', '2021-03-12 14:05:15'),
+(null, 'B', 'verde', '2021-03-12 16:09:17'),
+(null, 'C', 'laranja', '2021-03-12 16:10:18'),
+(null, 'D', 'vermelho', '2021-03-12 16:13:19');
 
 select * from Estufas;
+
+CREATE TABLE Sensor (
+idSensor int primary key auto_increment,
+temperatura int,
+statusSensor varchar(10),
+check (statusSensor = 'ativado' or statusSensor = 'desativado' 
+or statusSensor = 'manutenção'));
+
+INSERT INTO Sensor VALUES
+(null, 20, 'ativado'),
+(null, 18, 'ativado'),
+(null, 25, 'ativado'),
+(null, 3, 'ativado');
+
+select*from Sensor;
