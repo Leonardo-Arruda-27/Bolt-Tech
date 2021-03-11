@@ -1,5 +1,6 @@
 /* Style do plano de fundo, não o deixando repetir e deixando fixo. */
 body {
+    background-image: url(Fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -52,7 +53,7 @@ body {
 }
 
 /* Style do b (bold), modificando a fonte e a cor. */
-.Caixa b{
+.Caixa b {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
@@ -72,7 +73,7 @@ body {
 
 /* Quando clickar no input (caixa de texto), a animação deve levar 0.5 segundos, a cor fica verde água e o tamanho aumenta para 200px.*/
 .Caixa input:focus {
-    transition: 0.5s;
+    transition: 1s;
     width: 200px;
     border-bottom: 2px solid #08d68e;
 }
