@@ -31,7 +31,7 @@
         var metroEstufa = Number(idEstufa.value);
         var qtdSensor = metroEstufa / 20;
         var sensor = qtdSensor * 100;
-        var instalacao = metroEstufa * 50;
+        var instalacao = qtdSensor * 50;
         var planomensal = sensor + instalacao + 400;
 
         plano_msg.innerHTML = `Quantidade de sensores a ser instalados: <u style="color: #08d68e;">${qtdSensor.toFixed(0)}</u> <br><br>
@@ -40,11 +40,12 @@
             Valor do plano mensal é de <u style="color: #08d68e;">R$ 400.00</u> <br><br>
             Valor final: <u style="color: #08d68e;">R$ ${planomensal.toFixed(2)}</u>`;
     }
+
     function semestral() {
         var metroEstufa = Number(idEstufa.value);
         var qtdSensor = metroEstufa / 20;
         var sensor = qtdSensor * 100;
-        var instalacao = metroEstufa * 50;
+        var instalacao = qtdSensor * 50;
         var planosemestral = sensor + instalacao + 2400;
 
         plano_msg.innerHTML = `Quantidade de sensores a ser instalados: <u style="color: #08d68e;">${qtdSensor.toFixed(0)}</u> <br><br>
@@ -53,11 +54,12 @@
             Valor do plano mensal é de <u style="color: #08d68e;">R$ 400.00</u> <br><br>
             Valor final: <u style="color: #08d68e;">R$ ${planosemestral.toFixed(2)}</u>`;
     }
+
     function anual() {
         var metroEstufa = Number(idEstufa.value);
         var qtdSensor = metroEstufa / 20;
         var sensor = qtdSensor * 100;
-        var instalacao = metroEstufa * 50;
+        var instalacao = qtdSensor * 50;
         var planoanual = sensor + instalacao + 4800;
 
         plano_msg.innerHTML = `Quantidade de sensores a ser instalados: <u style="color: #08d68e;">${qtdSensor.toFixed(0)}</u> <br><br>
