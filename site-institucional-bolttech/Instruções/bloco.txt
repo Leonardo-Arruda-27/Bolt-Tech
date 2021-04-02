@@ -1,0 +1,16 @@
+USO DAS FONTES: 
+
+Montserrat     > Usada SOMENTE na LOGO
+Alfa Slab One  > Usada SOMENTE na Leterring
+Roboto         > Fonte PADRÃO da Página
+
+CORES: 
+
+Amarelo > Padrão > rgb(254, 198, 62)
+Branco  > Padrão
+
+
+CORES FUNDO: 
+
+Cinza escuro > Padrão > rgb(37, 37, 37)
+
