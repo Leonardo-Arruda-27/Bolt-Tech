@@ -43,8 +43,8 @@ body {
 }
 
 .banner {
-  background-color: rgb(37, 37, 37);
-  background-image: url(img/bannerteste3.png);
+  background-color: rgb(37, 37, 37); 
+  background-image: url(img/banner-padrão.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
