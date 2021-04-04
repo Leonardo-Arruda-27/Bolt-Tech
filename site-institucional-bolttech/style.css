@@ -77,3 +77,81 @@ body {
   border-bottom: rgb(254, 198, 62) solid 5px;
   border-top: rgb(254, 198, 62)  solid 5px;
 }
+
+.div-cafe-img {
+  padding: 25px;
+  text-align: center;
+  margin: 0;
+  background-color: rgb(37, 37, 37);
+  border-top: 4px solid rgb(254, 198, 62);
+}
+
+.div-cafe-img img {
+  height: 50px;
+}
+
+.box {
+  overflow: auto;
+}
+
+.box h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 45px;
+  color: rgb(37, 37, 37);
+  margin-top: 60px;
+}
+
+.box-item {
+  float: left;
+  text-align: center;
+  margin: 40px;
+  color: white;
+}
+
+.box-item div {
+  height: 145px;
+  width: 270px;
+  padding: 25px;
+  box-shadow: 15px 10px 15px darkgrey;
+}
+
+.box-item-share1 {
+  background-color: rgb(254, 198, 62);
+  border-radius: 20px 20px 0 0;
+}
+
+.box-item-share2 {
+  background-color: rgb(37, 37, 37);
+  border-radius: 0 0 20px 20px;
+}
+
+
+.box-item h3 {
+  color: rgb(254, 198, 62);
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.box-item img {
+  height: 130px;
+}
+
+.botao-orcamento {
+  text-align: center;
+  margin: 50px;
+}
+
+.botao-orcamento button {
+  height: 50px;
+  width: 250px;
+  border-radius: 25px;
+  background-color: rgb(254, 198, 62);
+  border: none;
+  outline: none;
+  color: rgb(37, 37, 37);
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  
+}
