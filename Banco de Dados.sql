@@ -61,4 +61,5 @@ INSERT INTO Sensor VALUES
 (null, 25, 'ativado'),
 (null, 3, 'ativado');
 
-select*from Sensor;
+
+
