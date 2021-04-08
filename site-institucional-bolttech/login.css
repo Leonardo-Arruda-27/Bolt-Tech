@@ -41,6 +41,7 @@ body {
     color: rgb(37, 37, 37);
     background-color: rgb(254, 198, 62);
     outline: none;
+    border: none;
 }
 
 .logo img {
