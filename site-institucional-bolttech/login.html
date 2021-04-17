@@ -19,9 +19,9 @@
 
         <div class="container">
             <center>Faça seu login</center><br>
-            <input type="text" placeholder="Digite seu CPF"><br> <br>
-            <input type="password" placeholder="Digite sua senha"><br><br>
-            <button>Login</button>
+            <input id="id_cpf" type="text" placeholder="Digite seu CPF"><br> <br>
+            <input id="id_senha" type="password" placeholder="Digite sua senha"><br><br>
+            <button onclick="login()">Login</button>
             <span class="esqueceu">Esqueceu sua senha?</span>
         </div>
     </div>
@@ -30,3 +30,14 @@
 </body>
 
 </html>
+
+<script>
+    function login() {
+        if (id_cpf.value == '111.222.333-44' && id_senha.value == 'senha12345') {
+            alert('Acesso permitido!')
+
+        } else {
+            alert('CPF ou Senha incorreta')
+        }
+    }
+</script>
