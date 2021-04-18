@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .header {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    overflow: auto;
+    border-bottom: 4px solid rgb(254, 198, 62);
+    padding: 10px 0;
+  }
+  
+  .header img {
+    margin-right: 5px;
+    float: left;
+    height: 43px;
+  
+  }
+  
+  .navbar {
+    list-style: none;
+    float: right;
+  }
+  
+  .navbar li {
+    float: left;
+    margin-left: 15px;
+    text-transform: uppercase;
+  }
+  
+  .titulo {
+    margin: 0;
+    float: left;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .banner {
+    background-color: rgb(37, 37, 37);
+    background-image: url(Imagens/Cfé\ img4k.jpg);
+    background-size: cover;
+    height: 300px;
+    padding-top: 0px;
+  }
+  
+  .lettering {
+    text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0);
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+#Coluna1 {
+    width: auto; 
+    height: 500px;
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    align-content: center;
+}
+
+#Coluna2 {
+    width: 500px;
+    height: 700px;
+    float: right;
+    padding: 10px;
+    align-content: center;
+    text-align: center;
+   
+}
+
+#Coluna3 {
+  margin-top: 28%;
+  width: 700px;
+  height: 350px; 
+}
+
+#Coluna3 img{
+  margin-left: -300px;
+  margin-top: -300px;
+  width: 1300px;
+  height: 250px;
+  border: 3px black solid; 
+}
+
+.box {
+  margin-left: 200px;
+  overflow: auto;
+  
+}
+
+.box .box-item {
+  float: left;
+  width: 390px;
+  text-align: justify;
+}
+
+#Coluna8{
+  background-color: rgb(37, 37, 37);
+  color: White;
+  margin: auto;
+  
+ 
+  
+  
+}
+
+#Coluna9 {
+  background-color: rgb(254, 198, 62) ;
+  text-align: center;
+  background-size: cover;
+  height: 100px;
+ 
+}
+
+
+
