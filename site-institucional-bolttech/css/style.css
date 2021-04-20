@@ -530,7 +530,14 @@ h1{
   text-transform: uppercase;
 } */
 
+<<<<<<< HEAD
 
 
 
 /* Dashboard */
+=======
+a{
+  text-decoration: none;
+  color: white;
+}
+>>>>>>> e2f9240723afbc7b4b9e5039b56c006b8d062e9a
