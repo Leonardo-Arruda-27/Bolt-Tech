@@ -530,7 +530,7 @@ h1{
   text-transform: uppercase;
 } */
 
-.navbar a{
+a{
   text-decoration: none;
   color: white;
 }
