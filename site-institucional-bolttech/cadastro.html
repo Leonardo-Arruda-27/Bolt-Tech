@@ -65,7 +65,9 @@
         var CEP = id_cep.value.length;
         var senha = id_senha.value;
         var rsenha = id_rsenha.value;
-        if (nomevalida > -1 || CNPJ != 14 || tel != 11 || emailvalida == -1 || CEP != 9 || senha.length < 7 || rsenha != senha || enderecovalida > -1 || bairrovalida > -1 ) {
+        
+        console.log(nomevalida);
+        if (nomevalida > -1 || CNPJ != 18 || tel != 12 || emailvalida == -1 || CEP != 9 || senha.length < 7 || rsenha != senha || enderecovalida > -1 || bairrovalida > -1) {
             alert('Cadastro inválido');
         }
         else {

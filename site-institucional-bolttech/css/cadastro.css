@@ -12,10 +12,11 @@ body {
     width: 800px;
     margin: auto;
     border-radius: 3%;
-    height: 450px;
+    height: 520px;
     font-size: 30px;
     padding-top: 35px;
     margin-top: 120px;
+    
 }
 
 .cx_login input {
