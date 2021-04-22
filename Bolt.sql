@@ -12,8 +12,9 @@ Complemento varchar(20),
 Cidade varchar(45),
 UF char(2));
 
-Create table Usuário(
-NomeUsuário varchar(45),
+Create table Usuario(
+idUsuario int primary key auto_increment,
+NomeUsuario varchar(45),
 Celular varchar(13),
 Email varchar(45),
 Função varchar(45), 
@@ -34,7 +35,7 @@ foreign key(fkEmpresa1) references Empresa(idEmpresa))auto_increment = 1000;
 
 create table Sensor
 (idSensor int primary key auto_increment,
-StatusSensor varchar(10),
+StatusSensor varchar(25),
 fkEstufa int,
 foreign key(fkEstufa) references estufa(idEstufa));
 
@@ -57,12 +58,12 @@ insert into empresa values
 (null,'ZéCafé', '02.638.368/0001-05', '15703-296','Rua Durval Fernandes Chaves',15,'Fazenda do zé','São Paulo','SP'),
 (null,'Love café', '02.638.368/0001-05', '05136-230', 'Rua Itália','5','Fazenda love','Jales','SP');
 
-insert into Usuário values
-('Débora Pereira','31 96107-5111','DeboraPereira@uou.com','Proprietária','tuqui123',1),
-('Fabiana Cardoso','31 98692-7279 ','fabianacardoso@hotmail.com','CEO','nesco743',2),
-('Manuel Novaes','11 92966-3040','manuelnovaes@gmail.com','Gerente','zecafe12',3),
-('Mário Ramos','11 98193-3758','marioramos@hotmail.com','Diretor administrativo','love9999',4),
-('Lucas Souza','11 99224-3721','lucas_souza@hotmail.com','Proprietário','nescoffe1',2);
+insert into Usuario values
+(null,'Débora Pereira','31 96107-5111','DeboraPereira@uou.com','Proprietária','tuqui123',1),
+(null,'Fabiana Cardoso','31 98692-7279 ','fabianacardoso@hotmail.com','CEO','nesco743',2),
+(null,'Manuel Novaes','11 92966-3040','manuelnovaes@gmail.com','Gerente','zecafe12',3),
+(null,'Mário Ramos','11 98193-3758','marioramos@hotmail.com','Diretor administrativo','love9999',4),
+(null,'Lucas Souza','11 99224-3721','lucas_souza@hotmail.com','Proprietário','nescoffe1',2);
 
 insert into estufa values(
 null,'Estufa Alfa',1,'regular',2,1),
@@ -95,3 +96,7 @@ select * from Empresa inner join usuário on fkEmpresa = idEmpresa inner join es
 inner join temperatura on fkSensor = idSensor ;
 
 select * from estufa  inner join sensor on fkEstufa = idEstufa inner join temperatura on fkSensor = idSensor ;
+
+update usuario set senha = '12345678' where idUsuario = 2;
+
+select * from usuario;
