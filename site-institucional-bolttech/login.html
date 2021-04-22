@@ -11,22 +11,28 @@
 </head>
 
 <body>
-    <div class="logo">
-        <center>
-            <a href="index.html"><img src="img/Logo png branca.png" alt=""></a>
-        </center>
-    </div>
-    <div class="cx_login">
+    <div class="login-cont">
+        <div>
+            <div class="logo">
+                <center>
+                    <a href="index.html"><img src="img/Logo png branca.png" alt=""></a>
+                </center>
+            </div>
+            <div class="cx_login">
 
-        <div class="container">
-            <center>Faça seu login</center><br>
-            <input id="id_cpf" type="text" placeholder="Digite seu CNPJ ou CPF"><br> <br>
-            <input id="id_senha" type="password" placeholder="Digite sua senha"><br><br>
-            <button onclick="login()">Login</button>
-            <span class="esqueceu">Esqueceu sua senha?</span>
+                <div class="container">
+                    <center>Faça seu login</center><br>
+                    <input id="id_cpf" type="text" placeholder="Digite seu CNPJ ou CPF"><br> <br>
+                    <input id="id_senha" type="password" placeholder="Digite sua senha"><br>
+                    <button onclick="login()">Login</button>
+                    <span class="esqueceu">Esqueceu sua senha?</span>
+                    <span class="cadastrar">
+                        <center><a href="cadastro.html">Cadastre-se aqui</a></center>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
-
 
 </body>
 
@@ -36,7 +42,7 @@
     function login() {
         if (id_cpf.value == '11.222.333/0001-44' && id_senha.value == 'senha12345') {
             alert('Acesso permitido!');
-            window.location.href="dashboard.html";
+            window.location.href = "dashboard.html";
 
         } else {
             alert('CPF ou Senha incorreta');
