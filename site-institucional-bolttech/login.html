@@ -20,7 +20,7 @@
 
         <div class="container">
             <center>Faça seu login</center><br>
-            <input id="id_cpf" type="text" placeholder="Digite seu CPF"><br> <br>
+            <input id="id_cpf" type="text" placeholder="Digite seu CNPJ ou CPF"><br> <br>
             <input id="id_senha" type="password" placeholder="Digite sua senha"><br><br>
             <button onclick="login()">Login</button>
             <span class="esqueceu">Esqueceu sua senha?</span>
@@ -34,8 +34,9 @@
 
 <script>
     function login() {
-        if (id_cpf.value == '111.222.333-44' && id_senha.value == 'senha12345') {
-            alert('Acesso permitido!')
+        if (id_cpf.value == '111.222.333-44'|| id_cpf.value == 'XX. XXX. XXX/0001-XX' && id_senha.value == 'senha12345') {
+            alert('Acesso permitido!');
+            window.location.href=("dashboard.html");
 
         } else {
             alert('CPF ou Senha incorreta')
