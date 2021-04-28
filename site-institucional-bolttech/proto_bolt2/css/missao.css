@@ -1,0 +1,147 @@
+.missao{
+  width: 100%;
+  position: relative;
+  margin-top: 95px;
+}
+.historia{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-left: 100px;
+}
+.missao div img{
+  width: 250px;
+  border-radius: 10px;
+}
+
+.mst{
+  position: relative;
+}
+.mst h1{
+  width: 300px;
+  font-family: roboto;
+  font-size: 45px;
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  letter-spacing: 1px;
+}
+.mst h1 span{
+  color: #FEC63E;
+}
+
+.txt p{
+  width: 550px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-family: roboto;
+  line-height: 1.4em;
+  position: absolute;
+  left: 40%;
+  top: 170px;
+}
+
+.valores{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.img_valor{
+  
+  width: 100%;
+  position: relative;
+}
+.img_valor img{
+  width: 350px;
+   height: 450px;
+   position: relative;
+   left: 19%;
+   border-radius: 20%;
+   margin-top: 20px;
+}
+
+.txt_var{
+  
+  width: 100%;
+   display: flex;
+   justify-content: flex-end;
+  padding-right: 20px;
+}
+.txt_var h1{
+  
+  width: 300px;
+ font-size: 45px;
+ font-family: roboto;
+}
+
+.txt_var h1 span{
+  color: #FEC63E;
+}
+
+.p_var{
+ 
+  width: 100%;
+  padding-left: 90px;
+}
+.p_var p {
+  max-width: 650px;
+  font-size: 18px;
+  line-height: 1.4em;
+  font-family: roboto;
+}
+@media only screen and (max-width: 1120px) {
+  .historia{
+    padding: 0px 5px;
+  }
+.missao{
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5px;
+
+}
+.mst h1{
+ 
+  left: 5px;
+}
+
+.txt p {
+  position: relative;
+  left: 0;
+  top: 0;
+  max-width: 450px;
+  margin-top: 20px;
+  text-align: center;
+  
+}
+}
+
+@media only screen and (max-width: 768px) {
+.txt p {
+  max-width: 350px;
+}
+.p_var p{
+  margin-top: 20px;
+  max-width: 550px;
+}
+.mst h1{
+  color: white;
+  background: #25252554;
+  width: 230px;
+}
+.txt_var h1{
+  
+  
+ font-size: 35px;
+ 
+}
+.img_valor img{
+  width: 300px;
+  
+}
+}

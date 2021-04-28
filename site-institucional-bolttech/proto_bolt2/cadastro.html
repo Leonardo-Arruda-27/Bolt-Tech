@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cadastro</title>
+</head>
+
+<body class="blogin">
+  <section class="cadastro">
+    <img src="/img/lb.png" alt="">
+    <div class="cont_cad">
+      <h1>Cadastrar-se</h1>
+      <div class="ctr">
+        <form class="frm">
+          <input id="id_empresa" type="text" placeholder="EMPRESA" value="Três Corações">
+          <input id="id_cnpj" type="text" placeholder="CNPJ" value="28.848.124/0001-40">
+          <input id="id_cep" type="text" placeholder="CEP" value="68903-280">
+          <input id="id_end" type="text" placeholder="ENDEREÇO" value="Avenida Francisco Matos">
+          <input id="id_bairro" type="text" placeholder="BAIRRO" value="Universidade">
+          <input type="number" placeholder="NUMERO" value="123">
+          <input id="id_comp" type="text" placeholder="COMPLEMENTO" value="Fabrica">
+          <input type="text" placeholder="TELEFONE" value="11-99528321">
+          <input id="id_email" type="email" placeholder="EMAIL" value="Café@gmail.com">
+          <input id="id_senha" type="password" placeholder="SENHA" value="cafe12345">
+          <input id="id_rsenha" type="password" placeholder="REPITA SUA SENHA" value="cafe12345">
+        </form>
+      </div>
+      <a onclick="validarCadastro()" class="cdt" href="#">Cadastrar</a>
+      <a href="login.html">Já tenho uma conta</a>
+    </div>
+  </section>
+</body>
+<script>
+  function validarCadastro() {
+    var cnpj = id_cnpj;
+    var cep = id_cep;
+    var end = id_end;
+    var bairro = id_bairro;
+    var comp = id_comp;
+    var email = id_email;
+    var senha = id_senha;
+    var rsenha = id_rsenha;
+    var empresa = id_empresa;
+
+    var verend = end.value.indexOf("@", "!", "#", "$", "%", "¬", "&", "*", "(", ")", "+");
+    var verbairro = bairro.value.indexOf("@", "!", "#", "$", "%", "¬", "&", "*", "(", ")", "+");
+    var vercomp = comp.value.indexOf("@", "!", "#", "$", "%", "¬", "&", "*", "(", ")", "+");
+    var verempresa = empresa.value.indexOf("@", "!", "#", "$", "%", "¬", "&", "*", "(", ")", "+");
+
+    var veremail = email.value.indexOf("@", ".");
+
+
+    if (verempresa == -1 && cnpj.value.length == 18 && verend == -1 && verbairro == -1 && vercomp == -1 && veremail > -1 && senha.value.length > 3 && senha.value == rsenha.value) {
+      alert("Cadastro realizado com sucesso!");
+      window.location.href = "login.html";
+
+    } else {
+      console.log("errado");
+      alert("Erro reveja seu cadastro por favor.");
+
+
+    }
+
+  }
+</script>
+
+</html>
