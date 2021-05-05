@@ -12,8 +12,9 @@
   padding-left: 100px;
 }
 .missao div img{
-  width: 250px;
-  border-radius: 10px;
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
 }
 
 .mst{
@@ -45,9 +46,11 @@
 
 .valores{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  margin-top: 56px;
+  
 }
 .img_valor{
   
@@ -59,16 +62,20 @@
    height: 450px;
    position: relative;
    left: 19%;
-   border-radius: 20%;
+   border-radius: 20px;
    margin-top: 20px;
 }
 
 .txt_var{
   
-  width: 100%;
+  width: auto;
    display: flex;
-   justify-content: flex-end;
+   justify-content: flex-start;
   padding-right: 20px;
+  position: absolute;
+  right: 330px;
+  top: 30px;
+ 
 }
 .txt_var h1{
   
