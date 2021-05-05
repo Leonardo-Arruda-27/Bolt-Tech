@@ -30,11 +30,11 @@
   font-family: roboto;
   display: flex;
   flex-direction: column;
-  height: 305px;
+  height: 335px;
   text-align: center;
   width: 285px;
    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.119);
-  border-radius: 35%;
+  border-radius: 30%;
   margin-bottom: 25px;
   margin-left: 10px;
 }

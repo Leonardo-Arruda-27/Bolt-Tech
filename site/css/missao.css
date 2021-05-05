@@ -35,7 +35,7 @@
 .txt p{
   width: 550px;
   margin: 0 auto;
-  font-weight: bold;
+  font-size: 18px;
   font-family: roboto;
   line-height: 1.4em;
   position: absolute;
