@@ -75,7 +75,7 @@ header div img{
 
 /* APRESENTAÇÃO CAFES COM A CARA DO BRASIL */
 .cafebr{
-  background-image: url("/site/img/bannerteste.png");
+  background-image: url("../img/bannerteste.png");
   background-size: cover;
 
   height: 300px;
