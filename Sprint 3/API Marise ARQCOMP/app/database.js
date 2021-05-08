@@ -2,9 +2,9 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     port     : '3306',
-    user     : 'Root',
+    user     : 'root',
     password : 'arrozebom',
-    database : 'sensor'
+    database : 'bolttech'
 });
 
 connection.connect(function(err) {
