@@ -9,12 +9,12 @@ let sessoes = [];
 router.post('/autenticar', function(req, res, next) {
 	console.log('Recuperando usuário por login e senha');
 
-	var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var login = req.body.email; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
-	let instrucaoSql = `select * from usuario where login='${login}' and senha='${senha}'`;
+	let instrucaoSql = `select * from empresa where email='${login}' and senha='${senha}'`;
 	console.log(instrucaoSql);
-
++
 	sequelize.query(instrucaoSql, {
 		model: Usuario
 	}).then(resultado => {
@@ -41,8 +41,17 @@ router.post('/cadastrar', function(req, res, next) {
 	console.log('Criando um usuário');
 	
 	Usuario.create({
-		nome : req.body.nome,
-		login : req.body.login,
+		empresa: req.body.empresa,
+		CNPJ: req.body.cnpj,
+		CEP: req.body.cep,
+		endereco: req.body.endereco,
+		bairro: req.body.bairro,
+		endereco_numero: req.body.endereco_numero,
+		complemento: req.body.complemento,
+		UF: req.body.UF,
+		cidade: req.body.cidade,
+		telefone: req.body.telefone,
+		email: req.body.email,
 		senha: req.body.senha
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
@@ -56,7 +65,7 @@ router.post('/cadastrar', function(req, res, next) {
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function(req, res, next) {
-	let login = req.params.login;
+	let login = req.params.email;
 	console.log(`Verificando se o usuário ${login} tem sessão`);
 	
 	let tem_sessao = false;
@@ -80,7 +89,7 @@ router.get('/sessao/:login', function(req, res, next) {
 
 /* Logoff de usuário */
 router.get('/sair/:login', function(req, res, next) {
-	let login = req.params.login;
+	let login = req.params.email;
 	console.log(`Finalizando a sessão do usuário ${login}`);
 	let nova_sessoes = []
 	for (let u=0; u<sessoes.length; u++) {
