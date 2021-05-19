@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <title>Login</title>
 </head>
@@ -19,9 +19,9 @@
       <div class="intens_cont">
         <h1>Faça seu login</h1>
         <form id="form_login" method="post" onsubmit="return entrar()">
-        <input name="login" id="id_user" type="text" placeholder="User">
+        <input name="email" id="id_user" type="text" placeholder="User">
         <input name="senha" type="password" name="pass" id="id_pass" placeholder="Senha">
-        <input onclick="validarLogin()" class="btn" type="button" value="Login">
+        <input onclick="entrar()" class="btn" type="button" value="Login">
       </form>
       </div>
 
@@ -33,7 +33,7 @@
 </body>
 
 <script>
-function validarLogin() {
+function entrar() {
         // aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {

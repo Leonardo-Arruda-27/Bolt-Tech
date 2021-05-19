@@ -2,7 +2,7 @@ module.exports = {
   // Insira aqui seus dados do banco NA NUVEM AZURE
   production: {
     // altere APENAS username, password, database e host.
-    username: ' 211-1a-grupo11@bandtec.com.br',
+    username: 'bandtec',
     password: '#Gfgrupo11',
     database: 'bdBoltTech',
     host: 'bolttech.database.windows.net',

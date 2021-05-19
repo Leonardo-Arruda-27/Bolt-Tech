@@ -14,7 +14,6 @@ router.post('/autenticar', function(req, res, next) {
 	
 	let instrucaoSql = `select * from empresa where email='${login}' and senha='${senha}'`;
 	console.log(instrucaoSql);
-+
 	sequelize.query(instrucaoSql, {
 		model: Usuario
 	}).then(resultado => {
