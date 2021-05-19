@@ -12,17 +12,18 @@
 
 <body class="blogin">
   <section class="login">
-    <a href="index.html">
-      <img src="img/lb.png" alt="logo">
+    <a class="lg" href="../index.html">
+      <img src="./img/loginho.png" alt="">
+      <h1>BOLT TECH</h1>
     </a>
     <div class="log_cont">
       <div class="intens_cont">
         <h1>Faça seu login</h1>
         <form id="form_login" method="post" onsubmit="return entrar()">
-        <input name="email" id="id_user" type="text" placeholder="User">
-        <input name="senha" type="password" name="pass" id="id_pass" placeholder="Senha">
-        <input onclick="entrar()" class="btn" type="button" value="Login">
-      </form>
+          <input name="email" id="id_user" type="text" placeholder="User">
+          <input name="senha" type="password" name="pass" id="id_pass" placeholder="Senha">
+          <input onclick="entrar()" class="btn" type="button" value="Login">
+        </form>
       </div>
 
       <a href="#">Esqueceu sua senha?</a>
@@ -33,37 +34,37 @@
 </body>
 
 <script>
-function entrar() {
-        // aguardar();
-        var formulario = new URLSearchParams(new FormData(form_login));
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
+  function entrar() {
+    // aguardar();
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      body: formulario
+    }).then(resposta => {
 
-            if (resposta.ok) {
+      if (resposta.ok) {
 
-                resposta.json().then(json => {
+        resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+          sessionStorage.login_usuario_meuapp = json.login;
+          sessionStorage.nome_usuario_meuapp = json.nome;
 
-                    window.location.href = 'dashboard.html';
-                });
-
-            } else {
-
-                console.log('Erro de login!');
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizar_aguardar(texto);
-                });
-            }
+          window.location.href = 'dashboard.html';
         });
 
-        return false;
-    }
+      } else {
+
+        console.log('Erro de login!');
+
+        resposta.text().then(texto => {
+          console.error(texto);
+          finalizar_aguardar(texto);
+        });
+      }
+    });
+
+    return false;
+  }
 
     // function aguardar() {
     //     btn_entrar.disabled = true;

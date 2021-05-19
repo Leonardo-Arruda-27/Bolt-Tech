@@ -3,7 +3,12 @@
  
   
 }
+#form_login{
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .login{
   display: flex;
   flex-direction: column;
@@ -24,7 +29,8 @@
 }
 .log_cont{
   width: 330px;
-  background: white;
+  background: rgb(255,255,255);
+  background: linear-gradient(27deg, rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,27 +49,61 @@
 
 .intens_cont input{
   border-style: none;
-  border: #252525 solid 2px;
+  
   margin-bottom: 10px;
   padding: 8px 5px;
   border-radius: 5px;
   margin-top: 20px;
-
+ width: 100%;
+ border-bottom: 3px solid #FEC63E ;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.493);
 }
 
 .btn{
   background: #FEC63E;
   font-size: 17px;
   font-weight: bold;
+  border-bottom: 2px  solid #252525 !important;
   color: #252525;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: .3s;
+  width: 200px !important;
 }
 .log_cont a {
   color: #252525;
   margin-bottom: 10px;
-
+ 
 }
 .btn:hover{
-  background: #ddaa33;
+ 
+  background: #ddaa338c;
 }
+.lg img{
+  width: 60px;
+   
+   animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: forwards; 
+}
+
+@keyframes girar {
+  from {transform: rotate(0deg);;}
+  to {transform: rotate(180deg);;}
+}
+
+.lg{
+ 
+  display: flex;
+  align-items: center;
+   text-decoration: none;
+}
+.lg h1{
+  font-size: 44px;
+  color: white;
+  letter-spacing: 1px;
+  margin-left: 3px;
+}
+
