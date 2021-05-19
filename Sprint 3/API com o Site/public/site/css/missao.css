@@ -3,6 +3,12 @@
   position: relative;
   margin-top: 95px;
 }
+.solucao{
+  border-bottom: 2px solid #25252554;
+  height: auto;
+ 
+  padding-bottom: 50px;
+}
 .historia{
   display: flex;
   flex-direction: column;
@@ -50,7 +56,8 @@
   justify-content: center;
   position: relative;
   margin-top: 56px;
-  
+  border-bottom: 2px solid #25252554;
+  padding-bottom: 20px;
 }
 .img_valor{
   
@@ -99,6 +106,21 @@
   line-height: 1.4em;
   font-family: roboto;
 }
+
+@media only screen and (max-width: 1200px) {
+.valores{
+    
+  flex-direction: column;
+  padding-top: 130px;
+  border-bottom: 2px solid #25252554;
+  
+}
+.txt_var{
+  right: 150px;
+  top: 0px;
+  
+}
+}
 @media only screen and (max-width: 1120px) {
   .historia{
     padding: 0px 5px;
@@ -129,6 +151,16 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .valores{
+    
+    flex-direction: column;
+    padding-top: 80px;
+    border-bottom: 2px solid #25252554;
+  }
+  .txt_var{
+    right: 130px;
+    top: 0px;
+  }
 .txt p {
   max-width: 350px;
 }

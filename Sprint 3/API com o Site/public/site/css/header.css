@@ -55,7 +55,10 @@ header div img{
    border-radius: 5px 0px 5px;
    background-color: rgb(255, 255, 255);
 }
-.cte{
+.cte:hover{
+  transition: .3s;
+  background: #FEC63E;
+  border-radius: 4px;
   color: #252525 !important;
 }
 
