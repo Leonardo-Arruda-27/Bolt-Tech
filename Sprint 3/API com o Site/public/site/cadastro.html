@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/loginho.png">
   <title>Cadastro</title>
 </head>
 
@@ -18,7 +19,7 @@
         <form id="form_cadastro" method="post" onsubmit="return cadastrar()" class="frm">
           <input id="id_empresa" name="empresa" type="text" placeholder="EMPRESA" value="Três Corações">
           <input id="id_cnpj" name="cnpj" type="text" placeholder="CNPJ" value="28.848.124/0001-40">
-          <input id="id_cep" name="cep"  type="text" placeholder="CEP" value="68903-280">
+          <input id="id_cep" name="cep" type="text" placeholder="CEP" value="68903-280">
           <input id="id_end" name="endereco" type="text" placeholder="ENDEREÇO" value="Avenida Francisco Matos">
           <input id="id_bairro" name="bairro" type="text" placeholder="BAIRRO" value="Universidade">
           <input type="number" name="endereco_numero" placeholder="NUMERO" value="123">
@@ -28,7 +29,7 @@
           <input type="text" name="telefone" placeholder="TELEFONE" value="11-99528321">
           <input id="id_email" name="email" type="email" placeholder="EMAIL" value="Café@gmail.com">
           <input id="id_senha" name="senha" type="password" placeholder="SENHA" value="cafe12345">
-      </form>
+        </form>
       </div>
       <a onclick="cadastrar()" class="cdt" href="#">Cadastrar</a>
       <a href="login.html">Já tenho uma conta</a>
@@ -36,44 +37,44 @@
   </section>
 </body>
 <script>
-   function cadastrar() {
-        /* aguardar(); */
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            body: formulario
-        }).then(function (response) {
-            
-            if (response.ok) {
+  function cadastrar() {
+    /* aguardar(); */
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      body: formulario
+    }).then(function (response) {
 
-                window.location.href='login.html';
+      if (response.ok) {
 
-            } else {
+        window.location.href = 'login.html';
 
-                console.log('Erro de cadastro!');
-                /* response.text().then(function (resposta) { */
-               /*      div_erro.innerHTML = resposta;
-                });
-                finalizar_aguardar(); */
-            }
-        });
+      } else {
 
-        return false;
-    }
+        console.log('Erro de cadastro!');
+        /* response.text().then(function (resposta) { */
+        /*      div_erro.innerHTML = resposta;
+         });
+         finalizar_aguardar(); */
+      }
+    });
 
-   /*  function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
-    }
+    return false;
+  }
 
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
-    } */
+  /*  function aguardar() {
+       btn_entrar.disabled = true;
+       img_aguarde.style.display='block';
+       div_erro.style.display='none';
+   }
 
-  /* 
+   function finalizar_aguardar() {
+       btn_entrar.disabled = false;
+       img_aguarde.style.display='none';
+       div_erro.style.display='block';
+   } */
+
+  /*
   function validarCadastro() {
     var cnpj = id_cnpj;
     var cep = id_cep;
