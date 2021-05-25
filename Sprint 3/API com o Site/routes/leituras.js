@@ -5,12 +5,12 @@ var Leitura = require('../models').Leitura;
 var env = process.env.NODE_ENV || 'development';
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas/:idcaminhao', function(req, res, next) {
+router.get('/ultimas/:idSensor', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 7 está bom?
 	const limite_linhas = 7;
 
-	var idcaminhao = req.params.idcaminhao;
+	var idSensor = req.params.idSensor;
 
 	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
 	
@@ -24,18 +24,17 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 		momento,
 		DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
 		from leitura
-		where fkcaminhao = ${idcaminhao}
+		where fkcaminhao = ${idSensor}
 		order by id desc limit ${limite_linhas}`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
 		instrucaoSql = `select top ${limite_linhas} 
-		temperatura, 
-		umidade, 
-		momento,
-		FORMAT(momento,'HH:mm:ss') as momento_grafico
+		temperatura,  
+		dataTemp,
+		FORMAT(dataTemp,'HH:mm:ss') as momento_grafico
 		from leitura
-		where fkcaminhao = ${idcaminhao}
-		order by id desc`;
+		where fkSensor = ${idSensor}
+		order by idTemp desc`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}
@@ -54,20 +53,20 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 });
 
 
-router.get('/tempo-real/:idcaminhao', function(req, res, next) {
+router.get('/tempo-real/:idSensor', function(req, res, next) {
 	console.log('Recuperando caminhões');
 	
-	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idcaminhao = req.params.idcaminhao;
+	//var idSensor = req.body.idSensor; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var idSensor = req.params.idSensor;
 	
 	let instrucaoSql = "";
 	
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
-		instrucaoSql = `select temperatura, umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc limit 1`;
+		instrucaoSql = `select temperatura, umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idSensor} order by idTemp desc limit 1`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc`;
+		instrucaoSql = `select top 1 temperatura, dataTemp, FORMAT(dataTemp,'HH:mm:ss') as momento_grafico, fkSensor from leitura where fkSensor = ${idSensor} order by idTemp desc`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}
@@ -91,10 +90,7 @@ router.get('/estatisticas', function (req, res, next) {
 	const instrucaoSql = `select 
 							max(temperatura) as temp_maxima, 
 							min(temperatura) as temp_minima, 
-							avg(temperatura) as temp_media,
-							max(umidade) as umidade_maxima, 
-							min(umidade) as umidade_minima, 
-							avg(umidade) as umidade_media 
+							avg(temperatura) as temp_media
 						from leitura`;
 					
 
