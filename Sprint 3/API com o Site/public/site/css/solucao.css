@@ -20,9 +20,39 @@
 
   height: auto;
   min-width: 30%;
-  margin: 5px 5px;
+  margin: 100px 5px;
   display: flex;
   justify-content: center;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.box_cont::after{
+  content:"";
+  display: block;
+  margin: 0 auto;
+  background-image: url(../img/Camada\ 1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+ top:-100px;
+ width: 100px;
+ height: 80px;
+}
+
+.box_cont::before{
+  content:"";
+  display: block;
+  margin: 0 auto;
+  background-image: url(../img/Curva.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+
+ width: 400px;
+  
 }
 .box-item{
   background: #252525;
