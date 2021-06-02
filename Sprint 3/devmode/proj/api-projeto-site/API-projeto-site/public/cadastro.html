@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT - Sobre</title>
+    <link rel="stylesheet" href="./css2/cadastro.css">
+    <link rel="stylesheet" href="css/contato-e-login.css">
+</head>
+
+<body style="padding: 0; margin: 0;" class="blogin">
+    <section class="cadastro">
+        <img src="img/lb.png" alt="">
+        <div class="cont_cad">
+            <h1>Cadastrar-se</h1>
+            <div class="ctr">
+
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()" class="frm">
+                    <input id="id_empresa" name="empresa" type="text" placeholder="EMPRESA" value="Três Corações">
+                    <input id="id_cnpj" name="CNPJ" type="text" placeholder="CNPJ" value="28.848.124/0001-40">
+                    <input id="id_cep" name="CEP" type="text" placeholder="CEP" value="68903-280">
+                    <input id="id_end" name="endereco" type="text" placeholder="ENDEREÇO"
+                        value="Avenida Francisco Matos">
+                    <input id="id_bairro" name="bairro" type="text" placeholder="BAIRRO" value="Universidade">
+                    <input type="number" name="endereco_numero" placeholder="NUMERO" value="123">
+                    <input id="id_comp" name="complemento" type="text" placeholder="COMPLEMENTO" value="Fabrica">
+                    <input id="id_cidade" name="cidade" type="text" placeholder="cidade" value="">
+                    <input id="id_uf" name="UF" type="text" placeholder="UF" value="">
+                    <input type="text" name="telefone" placeholder="TELEFONE" value="11-99528321">
+                    <input id="id_email" name="email" type="email" placeholder="EMAIL" value="Café@gmail.com">
+                    <input id="id_senha" name="senha" type="password" placeholder="SENHA" value="cafe12345">
+                </form>
+            </div>
+            <a onclick="cadastrar()" class="cdt" href="#">Cadastrar</a>
+            <a href="login.html">Já tenho uma conta</a>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+       /*  aguardar(); */
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                window.location.href = 'login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    /* div_erro.innerHTML = resposta; */
+                });
+                /* finalizar_aguardar(); */
+            }
+        });
+
+        return false;
+    }
+
+    /*   function aguardar() {
+          btn_entrar.disabled = true;
+          img_aguarde.style.display = 'block';
+          div_erro.style.display = 'none';
+      }
+  
+      function finalizar_aguardar() {
+          btn_entrar.disabled = false;
+          img_aguarde.style.display = 'none';
+          div_erro.style.display = 'block';
+      } */
+
+</script>

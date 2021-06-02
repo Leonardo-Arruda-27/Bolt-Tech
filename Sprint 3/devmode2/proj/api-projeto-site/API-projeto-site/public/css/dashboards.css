@@ -71,17 +71,10 @@ a {
         transform: rotate(360deg);
     }
   }
-  .estufa_cont{
-      background-color: #090a0f;
-      border-radius: 4px;
-      display: grid;
-      grid-template-columns: 400px 400px;
-      width: 860px;
-      justify-content: center;
-      margin: 0 auto;
-      gap: 10px;
-      padding-top: 20px;
+  .div_temperatura6{
+      background-color: red !important;
   }
+  
 .intrologo{
     display: flex;
     align-items: center;
@@ -117,9 +110,11 @@ a {
     font-size: 25px;
     padding-bottom: 50px;
     border-bottom: 2px solid orangered;
+    
 }
 .estufas {
-    background-color: rgb(204, 203, 203);
+     border: #fffc68 3px solid;
+     color: white;
     height: 230px;
     border-radius: 4px;
     display: flex;
@@ -127,7 +122,8 @@ a {
     justify-content: center;
     align-items: center;
     margin: 5px !important;
-    width: 400px;
+    margin-left: 10px;
+    width: 265px;
 }
 .header ul {
     list-style-type: none;

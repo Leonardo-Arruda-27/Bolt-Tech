@@ -1,0 +1,82 @@
+.cadastro{
+  background: #252525;
+  text-align: center;
+  height: 100vh;
+  padding: 45px 5px;
+}
+.cadastro a{
+  color: #252525;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  
+}
+.cdt{
+  background: #FEC63E;
+  padding: 5px 5px;
+  width: 230px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 auto;
+}
+.cont_cad{
+  background: rgb(255,255,255);
+background: linear-gradient(27deg, rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 5px;
+  padding: 20px 5px;
+
+}
+.frm{
+  display: flex;
+  padding: 0px 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 800px;
+  padding: 10px 0px 10px 55px;
+}
+
+.ctr{
+  display: flex;
+  justify-content: center;
+}
+
+.frm input{
+  width: 27%;
+  padding: 10px 5px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 3px solid #FEC63E ;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.493);
+  text-align: center;
+ 
+}
+.cdt:hover{
+  background-color: #d4a12a;
+}
+@media only screen and (max-width: 750px) {
+  .frm{
+   padding-left: 20px;
+    
+   }
+   .frm input{
+     width: 40%;
+   }
+
+   .cadastro img{
+     width: 400px;
+     margin: 0 auto;
+   }
+   .cadastro{
+   
+    height: auto;
+    padding:0px 5px;
+  }
+}

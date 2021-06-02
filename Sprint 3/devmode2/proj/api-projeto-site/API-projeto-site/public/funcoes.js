@@ -4,6 +4,8 @@ let email_usuario;
 
 
 
+
+
 function redirecionar_login() {
     window.location.href = 'login.html';
 }
