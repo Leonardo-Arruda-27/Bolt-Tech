@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT - Tempo Real</title>
+    <link rel="stylesheet" href="css/dashboards.css">
+
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+
+    <style>
+        /* Classes CSS para exemplos de alertas */
+
+        .normal {
+            background-color: tomato !important;
+        }
+
+        .alerta-alto {
+            color: tomato;
+
+        }
+
+        .show-on-hover {
+            color: white !important;
+        }
+
+        .alerta-baixo {
+            color: rgb(38, 0, 255);
+
+        }
+    </style>
+</head>
+
+<body onload="atualizacaoPeriodica()">
+    <!--header inicio-->
+
+    <div class="header">
+        <div class="container">
+            <div class="intrologo">
+                <img class="fv32" src="./logo-branco.png" alt="icon">
+                <h1>BOLTTECH</h1>
+            </div>
+            <div class="usuario">
+                <h3>Empresa, <b id="b_usuario"></b></h3>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="grafico-chartjs.html">Histórico </a></li>
+                    <li><a href="#" class="highlight" onclick="logoff()">LOGOUT</a></li>
+                    <li><a href="pagina-estatica-chartsjs.html">
+                            <i class="show-on-hover"> GRÁFICO ESTÁTICO</i>
+                        </a></li>
+                    <li><a href="teste.html">
+                            <i class="show-on-hover">Cadastrar Novo Usuário</i>
+                        </a></li>
+                    <li><a href="testelog.html">Logar Como usuario</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--header fim-->
+
+    <div class="dashboard">
+        <h1 class="ttesfutas">Suas Estufas : </h1>
+        <div class="estufa_cont">
+
+
+
+            <div class="estufas">
+                <h4>Estufa <span name="namecaminhao" id="idSensor" value="1">1</span></h4>
+                <div class="valores">
+                    <div class="valor" id="div_temperatura">Temperatura sendo obtida...</div>
+
+                </div>
+                <div class="alertas">
+                    <div class="alerta" id="div_alerta_temperatura"> </div>
+
+                </div>
+            </div>
+
+            <div class="estufas">
+                <h4>Estufa <span name="namecaminhao" id="idSensor" value="2">2</span></h4>
+                <div class="valores">
+                    <div class="valor" id="div_temperatura2">Temperatura sendo obtida...</div>
+
+                </div>
+
+                <div class="alertas">
+                    <div class="alerta" id="div_alerta_temperatura2"></div>
+
+                </div>
+            </div>
+
+            <div class="estufas">
+                <h4>Estufa <span name="namecaminhao" id="idSensor" value="3">3</span></h4>
+                <div class="valores">
+                    <div class="valor" id="div_temperatura3">Temperatura sendo obtida...</div>
+
+                </div>
+                <div class="alertas">
+                    <div class="alerta" id="div_alerta_temperatura3"></div>
+
+                </div>
+            </div>
+
+            <div class="estufas">
+                <h4>Estufa <span name="namecaminhao" id="idSensor" value="4">4</span></h4>
+                <div class="valores">
+                    <div class="valor" id="div_temperatura4">Temperatura sendo obtida...</div>
+
+                </div>
+                <div class="estufas">
+                    <h4>Estufa <span name="namecaminhao" id="idSensor" value="4">4CLONE</span></h4>
+                    <div class="valores">
+                        <div class="valor" class="div_temperatura4">Temperatura sendo obtida...</div>
+
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura4"></div>
+
+                    </div>
+                </div>
+
+                <div class="estufas">
+                    <h4>Estufa <span name="namecaminhao" id="idSensor" value="5">5</span></h4>
+                    <div class="valores">
+                        <div class="valor" id="div_temperatura5">Temperatura sendo obtida...</div>
+
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta" id="div_alerta_temperatura5"></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+</body>
+
+
+<script>
+
+    let usuario;
+    console.log(usuario)
+    verificar_autenticacao();
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizacaoPeriodica() {
+        obterdadosporcaminhao(1);
+        obterdadosporcaminhao(2);
+        obterdadosporcaminhao(3);
+        obterdadosporcaminhao(4);
+        obterdadosporcaminhao(5);
+        setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+
+
+    function obterdadosporcaminhao(idSensor) {
+        //aguardar();
+        fetch(`/leituras/tempo-real/${idSensor}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+
+
+                        // aqui, após registro. use os nomes 
+                        // dos atributos que vem no JSON 
+                        var dados = {
+                            temperatura: resposta.temperatura,
+
+                        }
+
+                        alertar(resposta.temperatura, idSensor);
+                        atualizarTela(dados, idSensor);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do caminhao p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function alertar(temperatura, idSensor) {
+        // padrão para meu alerta
+        var limites = {
+            max_temperatura: 40,
+            min_temperatura: 20,
+
+        };
+
+        // zerar aviso de mensagem
+        var mensagem_temperatura = '';
+
+        var classe_temperatura = 'alerta';
+
+
+        // comparando
+        if (temperatura > limites.max_temperatura) {
+            mensagem_temperatura += 'Temperatura alta demais! <br>';
+            classe_temperatura = 'alerta alerta-alto';
+        }
+
+        if (temperatura < limites.min_temperatura) {
+            mensagem_temperatura = 'Temperatura baixa demais! <br>';
+            classe_temperatura = 'alerta alerta-baixo';
+        }
+
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+
+
+        if (idSensor == 1) {
+            div_temperatura_alterar = div_alerta_temperatura
+
+        } else if (idSensor == 2) {
+            div_temperatura_alterar = div_alerta_temperatura2
+
+        } else if (idSensor == 3) {
+            div_temperatura_alterar = div_alerta_temperatura3
+
+        } else if (idSensor == 4) {
+            div_temperatura_alterar = div_alerta_temperatura4
+
+        } else if (idSensor == 5) {
+            div_temperatura_alterar = div_alerta_temperatura5
+        }
+
+        // alterando
+        div_temperatura_alterar.innerHTML = mensagem_temperatura;
+        div_temperatura_alterar.className = classe_temperatura;
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function atualizarTela(dados, idSensor) {
+        console.log('iniciando atualização da tela...');
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+
+
+        if (idSensor == 1) {
+            div_temperatura_alterar = div_temperatura
+
+        } else if (idSensor == 2) {
+            div_temperatura_alterar = div_temperatura2
+
+        } else if (idSensor == 3) {
+            div_temperatura_alterar = div_temperatura3
+
+        } else if (idSensor == 4) {
+            div_temperatura_alterar = div_temperatura4;
+
+
+        } else if (idSensor == 5) {
+            div_temperatura_alterar = div_temperatura5
+        }
+
+        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
+
+    }
+
+
+    function sendData() {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:9001/api/sendData', false);
+        http.send(null);
+    }
+
+    // Descomente abaixo se quiser inserir dados a cada X segundos  
+    setInterval(() => {
+        sendData();
+    }, 5000);
+
+</script>

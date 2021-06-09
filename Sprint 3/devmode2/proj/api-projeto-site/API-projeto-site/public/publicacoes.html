@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fórum do meu Site</title>
+  <link rel="stylesheet" href="css/publicacoes.css">
+
+  <script type="text/javascript" src="funcoes.js"></script>
+
+  <style>
+    /* Classes CSS para exemplos de alertas */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0;
+      margin: 0;
+      background-color: #ecf0f1;
+    }
+
+
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* CABEÇALHO */
+
+    .header {
+      background-color: #f8f9d2;
+      background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+      border-right: 3px solid #fffc68;
+      width: 300px;
+      height: 100%;
+      position: fixed;
+      color: #090a0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    .header .container .highlight {
+      color: orangered
+    }
+
+    .header h1 {
+      margin: 0;
+      padding: 0;
+      float: left;
+      margin: 35px;
+      color: #090a0f;
+      font-size: 25px;
+      padding-bottom: 50px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .header .usuario {
+      width: 75%;
+      overflow: hidden;
+      margin: auto;
+      text-align: center;
+      color: white;
+    }
+
+    .header .usuario h3 {
+      font-weight: 100;
+    }
+
+    .header ul {
+      list-style-type: none;
+      float: left;
+      margin-top: 40px;
+    }
+
+    .header li {
+      margin: 0 0 30px 0;
+    }
+
+    .header a {
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .header a:hover {
+      font-weight: bold;
+    }
+
+    .header .current {
+      color: orangered;
+      font-weight: bold;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+      background-color: #090a0f;
+      text-align: center;
+      height: 100px;
+    }
+
+    .footer h4 {
+      color: #090a0f;
+      font-weight: 100;
+      margin: 0;
+      padding-top: 40px;
+    }
+
+
+
+    /* dashboard */
+
+    .dashboard {
+      background-color: #ecf0f1;
+      text-align: center;
+      padding: 50px 0;
+      width: 80%;
+      height: 100%;
+      margin-left: auto;
+    }
+
+    .dashboard h1 {
+      margin-bottom: 40px;
+    }
+
+
+
+    .box-login {
+      display: inline-block;
+      background-color: white;
+      box-shadow: 3px 3px 5px 2px #ccc;
+      padding: 60px 20px 0px 20px;
+      border-radius: 20px;
+      width: 400px;
+    }
+
+    .dashboard .btn-green {
+
+      margin: 20px auto;
+
+      color: #090a0f;
+      font-size: 15px;
+      font-weight: bold;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-color: #fffc68;
+      border: 0;
+      padding: 10px 20px;
+
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dashboard .btn-green:hover {
+      background-color: greenyellow;
+    }
+
+    .botoes {
+      margin: auto;
+      margin-bottom: 40px;
+      display: block;
+      /* Default de botão é inline-block. Com block, margin auto funciona*/
+    }
+
+    .btn {
+      color: white;
+      text-transform: uppercase;
+      width: 180px;
+      margin: 0 1%;
+      border: 5px solid #ecf0f1;
+      height: 38px;
+      padding: 0 20px;
+      cursor: pointer;
+      background-color: rgb(255, 164, 131);
+    }
+
+    .btn-now {
+      border: 3px solid #232323;
+      background-color: orangered;
+    }
+
+    /* EXTRA */
+
+    .extra {
+      margin: 10px;
+    }
+
+    .extra img {
+      height: 50px;
+      visibility: hidden;
+    }
+
+    .extra .msg_erro {
+      background-color: sandybrown;
+      color: black;
+      visibility: hidden;
+    }
+
+    .card {
+      border: 1px solid red;
+      border-radius: 10px;
+      display: block;
+      width: 35%;
+      margin: 10px 7%;
+      height: 160px;
+      float: left;
+      text-align: center;
+
+      background-color: white;
+      box-shadow: 3px 3px 5px 2px #ccc;
+
+    }
+
+    /* extra */
+
+    .show-on-hover {
+      color: #232323
+    }
+
+    .show-on-hover:hover {
+      color: #090a0f
+    }
+
+    .publicacao {
+      background-color: rgb(254, 198, 62) !important;
+      margin: 0 auto;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      display: block;
+      border: 1px solid #fffc68;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: left;
+      margin-bottom: 40px;
+
+    }
+
+    .nome {
+      margin-bottom: 10px;
+      color: #090a0f;
+      font-size: 16px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bold;
+      /* border: 1px solid rgb(255, 95, 37); */
+
+    }
+
+
+
+
+    .normal {
+      background-color: white;
+    }
+
+    .alerta-alto {
+      color: tomato;
+
+    }
+
+    .txttitulo {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .alerta-baixo {
+      color: rgb(38, 0, 255);
+
+    }
+
+    .usr {
+      background-color: #090C10;
+      height: 1498px;
+      overflow: hidden;
+      background: #090C10;
+      background: linear-gradient(90deg, #090C10 0%, #0D1117 35%, #10151d 100%);
+    }
+
+    #form_publicar {
+      background-color: #090C10;
+      border-radius: 5%;
+      box-shadow: 10px 10px 10px 5px #090c10;
+      display: flex;
+      width: 70%;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px 10px;
+    }
+
+    .textarea-padrao {
+      height: 70px;
+      width: 400px;
+      border-style: none;
+      border-radius: 2px;
+      padding: 20px 10px;
+    }
+
+    #feed_container {
+      background-color: #10151d !important;
+      height: auto !important;
+      width: 100% !important;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+
+    .descricao {
+      background-color: rgb(254, 198, 62) !important;
+      height: 50%;
+      padding: 10px 5px;
+    }
+
+    .descricao p {
+      width: 100%;
+      overflow: hidden;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    }
+
+    .txtpost {
+      background-color: rgb(37, 37, 37) !important;
+      color: white !important;
+      text-align: center;
+      padding-top: 30px;
+      box-sizing: border-box;
+      height: 200px !important;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body onload="obterPublicacoes()">
+  <!--header inicio-->
+
+  <div class="header headerbk">
+    <div class="container ">
+      <div class="txttitulo">
+        <h1 style="color: #090a0f;"> BOLTTECH</h1>
+        <div class="usuario">
+          <h3 style=" height: 40px; color: #090a0f; margin-bottom: 10px; padding-top: 10px; "> Bem vindo </h3>
+          <b style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin-top: 20px; color: #090a0f; font-size: 16px; font-weight: bold; letter-spacing: 1px;"
+            id="c_usuario"></b>
+        </div>
+      </div>
+      <div class="nav">
+        <ul>
+          <li><a style="  font-weight: bold; color: #090a0f;" href="temporealuser.html">Tempo Real</a></li>
+          <li><a style="font-weight: bold; color: #090a0f;" href="graficousuario.html"> histórico recente</a>
+          </li>
+          <li><a style="font-weight: bold; color: #090a0f;" href="#" class="highlight" onclick="logoff()">LOGOUT</a>
+          </li>
+          <li><a style="font-weight: bold; color: #090a0f;" href="estaticgrafiuser.html">
+              <i class="show-on-hover">IR PARA PÁGINA GRÁFICO ESTÁTICO</i>
+            </a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--header fim-->
+  <div class="cont_ppt">
+    <div class="dashboard  usr">
+
+      <div class="">
+        <h2
+          style="   color:#fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; letter-spacing: 1px; ">
+          Faça uma publicação!</h2>
+        <form id="form_publicar" method="post" onsubmit="return publicar()">
+
+          <textarea placeholder="Faça sua postagem aqui!" id="" rows="3" cols="50" maxlength="80"
+            class="textarea-padrao" name="descricao"></textarea>
+          <input style="display: none;" id="id_nomeempresa" name="empresa" type="text" value="">
+          <input style="display: none;" id="id_horaPost" name="dataPost" type="text" value="">
+
+          <button id="btn_publicar" class="btn-green">Publicar</button>
+        </form>
+        <div class="extra">
+          <div id="div_erro" class="msg_erro">
+          </div>
+          <img src="aguarde-orange.gif" id="img_aguarde">
+        </div>
+      </div>
+      <div class="feed">
+        <h1 style="color:  white;">Parceiros BOLTTECH</h1>
+        <div id="feed_container" class="container">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+
+<script>
+  function pegaEmpresa() {
+    id_nomeempresa.value = sessionStorage.nome_usuario_meuapp;
+  }
+  pegaEmpresa();
+
+  function pegaHora() {
+    var data = new Date();
+
+    // Guarda cada pedaço em uma variável
+    var dia = data.getDate();
+    var dia_sem = data.getDay();
+    var mes = data.getMonth();
+    var ano2 = data.getYear();
+    var ano4 = data.getFullYear();
+    var hora = data.getHours();
+    var min = data.getMinutes();
+    var seg = data.getSeconds();
+
+    // Formata a data e a hora (note o mês + 1)
+    var str_data = ano4 + '-' + (mes + 1) + '-' + dia;
+    var corrigirHora = Number(hora) - 3;
+    var str_hora = (corrigirHora + ':' + min + ':' + seg);
+
+    // Mostra o resultado
+    id_horaPost.value = `${str_data} ${str_hora}`;
+    console.log('Hoje é ' + str_data + ' às ' + str_hora);
+    console.log("ERRADA" + hora + "CERTA" + corrigirHora);
+  }
+  pegaHora();
+  function publicar() {
+    console.log("entrei!")
+    aguardar();
+    var formulario = new URLSearchParams(new FormData(form_publicar));
+    var idUsuario = sessionStorage.id_usuario_testando;
+    fetch(`/publicacoes/publicar/${idUsuario}`, {
+      method: "POST",
+      body: formulario
+    }).then(resposta => {
+
+      if (resposta.ok) {
+        obterPublicacoes();
+
+        finalizarAguardar();
+      } else {
+        console.log('Erro ao publicar!');
+        resposta.text().then(texto => {
+          console.error(texto);
+          finalizarAguardar(texto);
+        });
+      }
+    });
+
+    return false;
+  }
+
+  function atualizarFeed(publicacoes) {
+    var feed = document.getElementById("feed_container");
+    feed.innerHTML = "";
+    for (let i = 0; i < publicacoes.length; i++) {
+      var publicacao = publicacoes[i];
+
+      var divPublicacao = document.createElement("div")
+      var divNome = document.createElement("div")
+      var divDescricao = document.createElement("div")
+      console.log(publicacao[i])
+
+      divNome.innerHTML = `<p class="postitulo">${publicacao.login_testando}:</p> postado às ${publicacao.dataPost.replace("T", " - ").replace(".000Z", "")} Empresa ${publicacao.empresa} `;
+      divDescricao.innerHTML = `<textarea class="txtpost" disabled id="id_txt" style="height: 100px; width: 99%;  border-style: none;" >${publicacao.descricao}</textarea>`;
+
+      divPublicacao.className = "publicacao"
+      divNome.className = "nome";
+      divDescricao.className = "descricao";
+
+      divPublicacao.appendChild(divNome);
+      divPublicacao.appendChild(divDescricao);
+
+      feed.appendChild(divPublicacao);
+    }
+  }
+
+  function obterPublicacoes() {
+    aguardar();
+    fetch("/publicacoes")
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            atualizarFeed(resposta);
+
+            finalizarAguardar();
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+          finalizarAguardar("Nenhum resultado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações: ${error.message}`);
+      });
+  }
+
+  function obterPublicacoesPorUsuario(idUsuario) {
+    fetch(`/publicacoes/${idUsuario}`)
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+
+  function trocanome() {
+    var nome = sessionStorage.nome_usuario_testando;
+    c_usuario.innerHTML = nome;
+  }
+  trocanome();
+
+  function aguardar() {
+    btn_publicar.disabled = true;
+    img_aguarde.style.visibility = 'visible';
+    div_erro.style.visibility = 'hidden';
+  }
+
+  function finalizarAguardar(resposta) {
+    btn_publicar.disabled = false;
+    img_aguarde.style.visibility = 'hidden';
+    if (resposta) {
+      div_erro.style.visibility = 'visible';
+      div_erro.innerHTML = resposta;
+    }
+  }
+
+  verificar_autenticacao();
+
+</script>
