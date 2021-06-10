@@ -3,7 +3,7 @@ var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
 
-var Testando = require('../models').Testando;
+var Funcionario = require('../models').Funcionario;
 
 let sessoes = [];
 
@@ -41,11 +41,12 @@ router.post('/autenticar', function (req, res, next) {
 router.post('/autenticar2', function (req, res, next) {
 	console.log('Recuperando usuário por login e senha');
 
-	var login = req.body.login_testando; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var senha = req.body.senha_testando; // depois de .body, use o nome (name) do campo em seu formulário de login	
-	var email = req.body.email_testando;
+	var login = req.body.Email; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
+	var email = req.body.email;
 
-	let instrucaoSql = `select * from CadastroTestando where login_testando='${login}' and senha_testando='${senha}'`;
+	let instrucaoSql = `select * from funcionario where Email ='${login}' and senha ='${senha}'`;
+
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -54,7 +55,7 @@ router.post('/autenticar2', function (req, res, next) {
 		console.log(`Encontrados: ${resultado.length}`);
 
 		if (resultado.length == 1) {
-			sessoes.push(resultado[0].dataValues.login_testando);
+			sessoes.push(resultado[0].dataValues.login);
 			console.log('sessoes: ', sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
@@ -102,11 +103,12 @@ router.post('/cadastrar2', function (req, res, next) {
 
 	console.log('Criando um usuário 2');
 
-	Testando.create({
-		email_testando: req.body.email_testando,
-		login_testando: req.body.login_testando,
-		senha_testando: req.body.senha_testando,
-		fk_tesntando: req.body.fk_tesntando
+	Funcionario.create({
+		Email: req.body.Email,
+		nomeUsuario: req.body.nomeUsuario,
+		senha: req.body.senha,
+		fkEmpresa: req.body.fkEmpresa,
+		Celular: req.body.Celular
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
 		res.send(resultado);
@@ -143,7 +145,7 @@ router.get('/sessao/:login', function (req, res, next) {
 
 /* Verificação de usuário2 */
 router.get('/sessao/:login', function (req, res, next) {
-	let login = req.params.login_testando;
+	let login = req.params.nomeUsuario;
 	console.log(`Verificando se o usuário ${login} tem sessão`);
 
 	let tem_sessao = false;

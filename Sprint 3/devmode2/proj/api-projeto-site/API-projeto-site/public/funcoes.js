@@ -14,8 +14,8 @@ function verificar_autenticacao() {
     login_usuario = sessionStorage.id_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
     email_usuario = sessionStorage.teste_teste_meuapp;
-    nomecadastro = sessionStorage.nome_usuario_testando;
-    id_usuario = sessionStorage.id_usuario_testando;
+    nomecadastro = sessionStorage.nome_usuario;
+    id_usuario = sessionStorage.id_usuario;
     var f = localStorage;
     console.log(sessionStorage.id_usuario_meuapp);
 
