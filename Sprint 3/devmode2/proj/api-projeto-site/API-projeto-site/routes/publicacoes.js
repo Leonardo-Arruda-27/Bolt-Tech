@@ -12,8 +12,7 @@ router.post('/publicar/:idUsuario', function (req, res, next) {
     Publicacao.create({
         descricao: req.body.descricao,
         fkUsuario: idUsuario,
-        empresa: req.body.empresa,
-        dataPost: req.body.dataPost
+        empresa: req.body.empresa
     }).then(resultado => {
         console.log("Post realizado com sucesso!!");
         res.send(resultado);
@@ -29,13 +28,13 @@ router.get('/', function (req, res, next) {
     console.log('Recuperando todas as publicações');
 
     let instrucaoSql = `SELECT 
-    login_testando,
+    nomeUsuario,
     descricao,
     dataPost,
     empresa
     FROM publicacao
-    INNER JOIN CadastroTestando
-    ON Publicacao.fkUsuario = id_testando
+    INNER JOIN funcionario
+    ON Publicacao.fkUsuario = idusuario
     ORDER BY publicacao.id DESC`;
 
     sequelize.query(instrucaoSql, {

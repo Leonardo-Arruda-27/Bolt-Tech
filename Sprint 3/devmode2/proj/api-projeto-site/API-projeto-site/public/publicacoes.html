@@ -385,7 +385,7 @@
           <textarea placeholder="Faça sua postagem aqui!" id="" rows="3" cols="50" maxlength="80"
             class="textarea-padrao" name="descricao"></textarea>
           <input style="display: none;" id="id_nomeempresa" name="empresa" type="text" value="">
-          <input style="display: none;" id="id_horaPost" name="dataPost" type="text" value="">
+          <input id="id_horaPost" name="dataPost" type="text" value="">
 
           <button id="btn_publicar" class="btn-green">Publicar</button>
         </form>
@@ -434,7 +434,7 @@
     var str_hora = (corrigirHora + ':' + min + ':' + seg);
 
     // Mostra o resultado
-    id_horaPost.value = `${str_data} ${str_hora}`;
+    id_horaPost.value = "";
     console.log('Hoje é ' + str_data + ' às ' + str_hora);
     console.log("ERRADA" + hora + "CERTA" + corrigirHora);
   }
@@ -443,7 +443,7 @@
     console.log("entrei!")
     aguardar();
     var formulario = new URLSearchParams(new FormData(form_publicar));
-    var idUsuario = sessionStorage.id_usuario_testando;
+    var idUsuario = sessionStorage.id_usuario;
     fetch(`/publicacoes/publicar/${idUsuario}`, {
       method: "POST",
       body: formulario
@@ -476,7 +476,7 @@
       var divDescricao = document.createElement("div")
       console.log(publicacao[i])
 
-      divNome.innerHTML = `<p class="postitulo">${publicacao.login_testando}:</p> postado às ${publicacao.dataPost.replace("T", " - ").replace(".000Z", "")} Empresa ${publicacao.empresa} `;
+      divNome.innerHTML = `<p class="postitulo">${publicacao.nomeUsuario}:</p> Empresa ${publicacao.empresa} `;
       divDescricao.innerHTML = `<textarea class="txtpost" disabled id="id_txt" style="height: 100px; width: 99%;  border-style: none;" >${publicacao.descricao}</textarea>`;
 
       divPublicacao.className = "publicacao"
@@ -530,7 +530,7 @@
   }
 
   function trocanome() {
-    var nome = sessionStorage.nome_usuario_testando;
+    var nome = sessionStorage.nome_usuario;
     c_usuario.innerHTML = nome;
   }
   trocanome();

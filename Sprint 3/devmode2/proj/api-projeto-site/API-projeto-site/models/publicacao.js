@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     dataPost: {
       field: 'dataPost',
       type: DataTypes.DATE, // NÃO existe DATETIME. O tipo DATE aqui já tem data e hora
-      allowNull: false
+      allowNull: true
     },
     empresa: {
       field: 'empresa',
