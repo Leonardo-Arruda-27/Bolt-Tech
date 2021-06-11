@@ -32,22 +32,35 @@
 
         .gelado {
             letter-spacing: 1px;
-
+            border: cyan 3px solid !important;
             color: white !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             transition: .1s;
-            animation: frio .3s alternate infinite;
+
         }
 
         .gelado::after {
-            content: "TEMPERATURA ABAIXO DO NORMAL";
-
+            content: "";
+            background-image: url("./css2/img/ice-cube.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            width: 40px;
+            height: 40px;
             color: cyan !important;
         }
 
         .quente::after {
-            content: "TEMPERATURA ACIMA DO NORMAL";
-            color: tomato !important;
+            content: "";
+            background-image: url("./css2/img/flame.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            width: 40px;
+            height: 40px;
+
 
         }
 
@@ -55,26 +68,7 @@
             content: "ta normal ";
         }
 
-        @keyframes frio {
-            0% {
-                background-color: greenyellow !important;
-                border: rgb(255, 255, 255) 3px solid;
 
-            }
-
-            50% {
-                background-color: rgb(186, 255, 59) !important;
-                border: blue 3px solid;
-
-
-            }
-
-            100% {
-                background-color: cyan !important;
-                border: blue 3px solid;
-
-            }
-        }
 
 
         @keyframes quente {
@@ -107,9 +101,33 @@
             }
         }
 
+        .linkst {
+            background-color: #FEC63E;
+            color: #090a0f;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            width: 100px;
+            padding: 5px;
+            border-radius: 4px;
+            margin: 0px 10px;
+
+        }
+
+        .linkst:hover {
+            background-color: #090a0f;
+            color: #FEC63E;
+        }
+
+        .linkcontst {
+
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
         .quente {
-
-
             color: white !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             animation: quente .3s alternate infinite;
@@ -117,14 +135,48 @@
         }
 
         .normal {
-            background-color: greenyellow !important;
+            border: greenyellow 3px solid;
+
             letter-spacing: 1px;
-            color: #090a0f !important;
+            color: white !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
-        .estufa_cont {
+        #id_selecicao {
+            width: 120px;
+            background-color: #FEC63E;
+            color: #090a0f;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            border-radius: 4px;
+            border-style: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        #id_selecicao option {
             background-color: #090a0f;
+            color: white;
+            border-style: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+        }
+
+        .normal::after {
+            content: "";
+            background-image: url("./css2/img/ok.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            width: 40px;
+            height: 40px;
+            margin-top: 35px;
+
+        }
+
+        .estufa_cont {
+            background-color: #181a25;
             border-radius: 4px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -162,7 +214,7 @@
                     <li><a href="funcionariocad.html">
                             <i class="show-on-hover">Cadastrar Novo Usuário</i>
                         </a></li>
-                    <li><a href="testelog.html">Logar Como usuario</a></li>
+                    <li><a href="funclog.html">Logar Como usuario</a></li>
 
                 </ul>
             </div>
@@ -171,13 +223,22 @@
     <!--header fim-->
 
     <div class="dashboard" id="id_das">
-        <a id="frio" href="" onclick="teste('frio',event)">Frias</a>
+        <div class="linkcontst">
+            <a class="linkst" id="frio" href="" onclick="teste('frio',event)">Frias</a>
 
-        <a id="quente" href="" onclick="teste('quente',event)">Quente</a>
+            <a class="linkst" id="quente" href="" onclick="teste('quente',event)">Quente</a>
 
-        <a id="todos" href="" onclick="teste('todas',event)">Todas</a>
+            <a class="linkst" id="todos" href="" onclick="teste('todas',event)">Todas</a>
+        </div>
 
-
+        <select id="id_selecicao">
+            <option value="todas">BOLTTECH</option>
+            <option value=1>Estufa 1</option>
+            <option value=2>Estufa 2</option>
+            <option value=3>Estufa 3</option>
+            <option value=4>Estufa 4</option>
+            <option value=5>Estufa 5</option>
+        </select>
 
         <h1 class="ttesfutas">Suas Estufas : </h1>
         <div class="estufa_cont">
@@ -490,12 +551,12 @@
     }
 
     // Descomente abaixo se quiser inserir dados a cada X segundos
-    setInterval(() => {
-        sendData();
-    }, 5000);
+    /*  setInterval(() => {
+         sendData();
+     }, 5000); */
 
-    setInterval(() => {
-        window.location.reload(1);
-    }, 5000);
-
+    /*  setInterval(() => {
+         window.location.reload(1);
+     }, 5000);
+  */
 </script>
