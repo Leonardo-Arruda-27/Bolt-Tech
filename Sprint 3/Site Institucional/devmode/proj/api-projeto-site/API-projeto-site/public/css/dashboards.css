@@ -19,8 +19,8 @@ a {
 /* CABEÇALHO */
 
 .header {
-    background-color: #090a0f;
-    border-right: 3px solid #f6b;
+    background-color: #252525;
+    border-right: 3px solid #FEC63E;
     width: 300px;
     height: 150vh;
     position: fixed;
@@ -28,7 +28,7 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 10px 10px;
-    animation: bk 3s forwards infinite;
+    /* animation: bk 3s forwards infinite; */
 }
 
 @keyframes bk{
@@ -76,12 +76,14 @@ a {
   }
   
 .intrologo{
-    display: flex;
-    align-items: center;
-
- justify-content: center;
- flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px 0 0 0;
+  border-bottom: solid 1px #FEC63E;
 }
+
 .header .container .highlight {
     color: rgb(238, 237, 237)
 }
@@ -98,20 +100,18 @@ a {
 
 .usuario h3 {
     font-weight: 100;
-
+    color: #FEC63E;
 }
 
 .header h1 {
-    margin: 0;
     padding: 0;
     float: left;
-    margin: 35px;
+    margin: 35px 0 0 0;
     color: white;
     font-size: 25px;
     padding-bottom: 50px;
-    border-bottom: 2px solid orangered;
-    
 }
+
 .estufas {
      border: #fffc68 3px solid;
      color: white;

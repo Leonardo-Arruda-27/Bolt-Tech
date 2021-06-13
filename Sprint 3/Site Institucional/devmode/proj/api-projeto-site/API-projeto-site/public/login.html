@@ -4,29 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto IoT - Sobre</title>
-    <link rel="stylesheet" href="./css2/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/logo Bolttech.svg">
+    <title>Bolttech</title>
 </head>
 
 
 <body class="blogin">
+
+    <header class="header">
+        <div>
+            <a class="lg" href="../index.html">
+                <img src="css/img/logo Bolttech.svg" alt="logo">
+                <h1>Bolttech</h1>
+            </a>
+        </div>
+        <nav class="navegacao">
+            <ul>
+                <!-- <li><a href="#sobre" class="navbar" >Sobre</a></li>
+                <li><a class="link" href="#plano">Planos</a></li>
+                <li><a href="#contatos" class="navbar">Contatos</a></li> -->
+                <li><a href="login.html" class="navbar">Entrar</a></li>
+                <li><a href="cadastro.html" class="cte">Cadastrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <section class="login">
-        <a class="lg" href="../index.html">
-            <img src="./css2/img/loginho.png" alt="logo">
-            <h1>BOLT TECH</h1>
-        </a>
         <div class="log_cont">
             <div class="intens_cont">
                 <h1>Faça seu login</h1>
                 <form id="form_login" method="post" onsubmit="return entrar()">
-                    <input name="email" id="id_user" type="text" placeholder="User">
+                    <input name="email" id="id_user" type="text" placeholder="Email">
                     <input name="senha" type="password" name="pass" id="id_pass" placeholder="Senha">
-                    <input onclick="entrar()" class="btn" type="button" value="Login">
+                    <a onclick="entrar()" class="cdt" value="Login" href="#">Login</a>
+                    <!-- <input onclick="entrar()" class="btn" type="button" value="Login"> -->
                 </form>
             </div>
 
-            <a href="#">Esqueceu sua senha?</a>
-            <a href="cadastro.html">Cadastrar Agora</a>
+            <a href="#" class="a_ref">Esqueceu sua senha?</a>
+            <a href="cadastro.html" class="a_ref">Cadastrar Agora</a>
 
         </div>
     </section>
