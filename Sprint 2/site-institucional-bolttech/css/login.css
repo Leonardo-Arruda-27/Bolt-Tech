@@ -24,7 +24,13 @@ body {
     align-items: center;
 }
 
-.cx_login {
+ 198, 62);
+    outline: none;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.logo img {.cx_login {
     background-color: white;
     width: 35%;
     margin: auto;
@@ -54,13 +60,7 @@ body {
     border-radius: 20px;
     padding: 7px;
     color: rgb(37, 37, 37);
-    background-color: rgb(254, 198, 62);
-    outline: none;
-    border: none;
-    margin-bottom: 15px;
-}
-
-.logo img {
+    background-color: rgb(254,
     height: 70px;
 }
 
