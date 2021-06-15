@@ -55,8 +55,9 @@
             <a class="linkst" id="todos" href="" onclick="teste('todas',event)">Todas</a>
         </div>
 
-        <select id="id_selecicao">
-            <option value="todas">BOLTTECH</option>
+        <select id="selecao" onchange="estufas()">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="todas">Estufas em alerta</option>
             <option value=1>Estufa 1</option>
             <option value=2>Estufa 2</option>
             <option value=3>Estufa 3</option>
@@ -141,6 +142,99 @@
 </body>
 
 <script>
+    
+   
+    function estufas() {
+        const estufas = document.querySelectorAll(".estufas");
+        // if (carregar == 10) {
+        //     console.log(estufas)
+        //     estufas.forEach((estufinha, index) => {
+        //         if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
+        //             estufinha.classList.contains("alerta_alto") ||
+        //             estufinha.classList.contains("alerta_baixo")) {
+        //             estufas[index].style.display = "flex";
+        //         } else {
+        //             estufas[index].style.display = "none";
+        //         }
+
+        //     })
+        // }
+
+        if (selecao.value == "todas") {
+
+            estufas.forEach((estufinha, index) => {
+                if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
+                    estufinha.classList.contains("alerta_alto") ||
+                    estufinha.classList.contains("alerta_baixo")) {
+                    estufas[index].style.display = "flex";
+                } else {
+                    estufas[index].style.display = "none";
+                }
+
+            })
+        }
+        if (selecao.value == 1) {
+
+            estufas.forEach((estufinha, index) => {
+                if (index == 0) {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "flex";
+                } else {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "none";
+                }
+            })
+        }
+        if (selecao.value == 2) {
+
+            estufas.forEach((estufinha, index) => {
+                if (index == 1) {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "flex";
+                } else {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "none";
+                }
+            })
+        }
+        if (selecao.value == 3) {
+
+            estufas.forEach((estufinha, index) => {
+                if (index == 2) {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "flex";
+                } else {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "none";
+                }
+            })
+        }
+        if (selecao.value == 4) {
+
+            estufas.forEach((estufinha, index) => {
+                if (index == 3) {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "flex";
+                } else {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "none";
+                }
+            })
+        }
+        if (selecao.value == 5) {
+
+            estufas.forEach((estufinha, index) => {
+                if (index == 4) {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "flex";
+                } else {
+                    console.log(selecao.value)
+                    estufas[index].style.display = "none";
+                }
+            })
+        }
+
+    }
 
     function limpar(tipo) {
         if (tipo == "frio") {
@@ -266,13 +360,13 @@
     function alertar(temperatura, idSensor) {
         // padrão para meu alerta
         var limites = {
-            max_temperatura: 30,
-            min_temperatura: 20,
-            alerta_tempbaixa:18,
-            alerta_tempalta:22
+            max_temperatura: 27,
+            min_temperatura: 15,
+            alerta_tempbaixa: 18,
+            alerta_tempalta: 22
         };
 
-        
+
 
         // zerar aviso de mensagem
         var mensagem_temperatura = '';
@@ -291,15 +385,16 @@
             classe_temperatura = 'alerta alerta-baixo';
         }
 
-        if (temperatura < limites.alerta_tempbaixa) {
-            mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>baixa </b>!</p>';
-            classe_temperatura = 'alerta alerta-baixo';
+        if (temperatura < limites.alerta_tempbaixa && temperatura > limites.min_temperatura) {
+            mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b> em alerta </b>!</p>';
+            classe_temperatura = 'alerta alerta-tempbaixo';
         }
 
-        if (temperatura > limites.alerta_tempalta) {
-            mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>baixa </b>!</p>';
-            classe_temperatura = 'alerta alerta-baixo';
+        if (temperatura > limites.alerta_tempalta && temperatura < limites.max_temperatura) {
+            mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>em alerta </b>!</p>';
+            classe_temperatura = 'alerta alerta-tempalto';
         }
+
 
         // escolhendo qual alterar
         var div_temperatura_alterar
@@ -316,7 +411,7 @@
 
         } else if (idSensor == 4) {
             div_temperatura_alterar = div_alerta_temperatura4
-            div_alerta_temperatura4.setAttribute("class", "gelado");
+            // div_alerta_temperatura4.setAttribute("class", "gelado");
 
         } else if (idSensor == 5) {
             div_temperatura_alterar = div_alerta_temperatura5
@@ -329,21 +424,43 @@
         const estufinhas = document.querySelectorAll(".alerta");
         var estufonas = document.querySelectorAll(".estufas");
         estufinhas.forEach((estufa, index) => {
-
+            if (estufa.classList.contains("alerta-tempbaixo")) {
+                estufonas[index].classList.remove("normal");
+                estufonas[index].classList.remove("quente");
+                estufonas[index].classList.remove("gelado");
+                estufonas[index].classList.remove("alerta_alto");
+                estufonas[index].classList.add("alerta_baixo");
+            }
+            if (estufa.classList.contains("alerta-tempalto")) {
+                estufonas[index].classList.remove("normal");
+                estufonas[index].classList.remove("quente");
+                estufonas[index].classList.remove("gelado");
+                estufonas[index].classList.remove("alerta_baixo");
+                estufonas[index].classList.add("alerta_alto");
+            }
             if (estufa.classList.contains("alerta-baixo")) {
                 estufonas[index].classList.remove("normal");
                 estufonas[index].classList.remove("quente");
+                estufonas[index].classList.remove("alerta_baixo");
+                estufonas[index].classList.remove("alerta_alto");
                 estufonas[index].classList.add("gelado");
             }
-            if (!(estufa.classList.contains("alerta-baixo"))) {
-                estufonas[index].classList.remove("gelado");
-                estufonas[index].classList.remove("quente");
-                estufonas[index].classList.add("normal");
-            }
+
             if (estufa.classList.contains("alerta-alto")) {
                 estufonas[index].classList.remove("normal");
                 estufonas[index].classList.remove("gelado");
+                estufonas[index].classList.remove("alerta_baixo");
+                estufonas[index].classList.remove("alerta_alto");
                 estufonas[index].classList.add("quente");
+            }
+            if (!(estufa.classList.contains("alerta-alto")) && !(estufa.classList.contains("alerta-baixo")) && !
+                (estufa.classList.contains("alerta-tempbaixo")) &&
+                !(estufa.classList.contains("alerta-tempalto"))) {
+                estufonas[index].classList.add("normal");
+                estufonas[index].classList.remove("gelado");
+                estufonas[index].classList.remove("alerta_baixo");
+                estufonas[index].classList.remove("alerta_alto");
+                estufonas[index].classList.remove("quente");
             }
 
         })
@@ -385,7 +502,6 @@
         http.open('GET', 'http://localhost:9001/api/sendData', false);
         http.send(null);
     }
-
     // Descomente abaixo se quiser inserir dados a cada X segundos
     /*  setInterval(() => {
          sendData();

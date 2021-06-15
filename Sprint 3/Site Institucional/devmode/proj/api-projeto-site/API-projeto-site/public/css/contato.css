@@ -126,18 +126,23 @@
 /* dados */
 
 .dados {
-
+  display: flex;
+  align-items: center;
   width: 50%;
+  flex-direction: column;
 }
 
 .dados h1 {
   color: #333;
-
+  font-size: 35px;
 }
 
 .dados ul {
   list-style: none;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dados ul li {
@@ -145,7 +150,7 @@
   font-weight: bold;
   color: #333;
   font-size: 18px;
- 
+ text-align: center;
 }
 
 .dados img {
@@ -155,6 +160,9 @@
   height: 240px;
   cursor: pointer;
 
+}
+.dados a{
+  color: black;
 }
 
 @media only screen and (max-width: 378px) {
