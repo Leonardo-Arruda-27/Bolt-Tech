@@ -268,8 +268,11 @@
         var limites = {
             max_temperatura: 30,
             min_temperatura: 20,
-
+            alerta_tempbaixa:18,
+            alerta_tempalta:22
         };
+
+        
 
         // zerar aviso de mensagem
         var mensagem_temperatura = '';
@@ -288,6 +291,15 @@
             classe_temperatura = 'alerta alerta-baixo';
         }
 
+        if (temperatura < limites.alerta_tempbaixa) {
+            mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>baixa </b>!</p>';
+            classe_temperatura = 'alerta alerta-baixo';
+        }
+
+        if (temperatura > limites.alerta_tempalta) {
+            mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>baixa </b>!</p>';
+            classe_temperatura = 'alerta alerta-baixo';
+        }
 
         // escolhendo qual alterar
         var div_temperatura_alterar
