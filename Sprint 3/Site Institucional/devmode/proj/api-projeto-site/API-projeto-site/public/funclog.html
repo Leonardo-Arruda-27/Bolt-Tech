@@ -4,56 +4,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login-Usuario</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/contato-e-login.css">
-  <link rel="stylesheet" href="./css2/dashboard.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="css/img/logo Bolttech.svg">
+  <title>Bolttech</title>
 </head>
 
 <body>
   <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo titulouser" style=" text-align: center; width: 100%; ">BOLTTECH</h1>
-      <div class="nav">
-
-      </div>
+  <header class="header">
+    <div>
+        <a class="lg" href="../index.html">
+            <img src="css/img/logo Bolttech.svg" alt="logo">
+            <!-- <h1>Bolttech </h1> -->
+        </a>
     </div>
-  </div>
+    <nav class="navegacao">
+        <ul>
+            <!-- <li><a href="#sobre" class="navbar" >Sobre</a></li>
+            <li><a class="link" href="#plano">Planos</a></li>
+            <li><a href="#contatos" class="navbar">Contatos</a></li> -->
+            <li><a href="funclog.html" class="navbar">Entrar como usuário</a></li>
+            <li><a href="funcionariocad.html" class="cte">Cadastrar usuário</a></li>
+        </ul>
+    </nav>
+</header>
   <!--header fim-->
-  <div class="jorginho">
-    <div class="pag-login">
-      <div class="container">
-        <div class="box-login2">
-          <h1 style="position: relative; top: 30px;">Login Usuário</h1>
+  <div class="bg_contatofunc">
+    <div class="contatofunc">
+
+      <div class="formulario">
+        <h1 
+          style="font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   color: #FFF;">
+          Entre como usuário
+          <br>da sua empresa! </h1>
+        <form id="form_login2" method="post" onsubmit="return entrar2()">
+
+          <p>Email:</p>
+          <input type="text" class="input-padrao" name="Email">
+          <br>
+          <p>Senha:</p>
+          <input type="password" class="input-padrao" name="senha">
+          <br>
+          <button id="btn_entrar" class="btn-greenlog">Entrar</button>
+        </form>
 
 
 
-          <form id="form_login2" method="post" onsubmit="return entrar2()">
-            Email:
-            <input type="text" class="input-padrao" name="Email">
-            <br>
-            Senha:
-            <input type="password" class="input-padrao" name="senha">
-            <br>
-            <button id="btn_entrar" class="btn-greenlog">Entrar</button>
-          </form>
-
-          <div class="extra">
-            <div id="div_erro" class="msg_erro">
-            </div>
-
-            <img src="aguarde-orange.gif" id="img_aguarde">
-            <!--style="display: none;"-->
-
-          </div>
+        <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+          Erro no cadastro
         </div>
+
+      </div>
+      <div class="imagem-lateral">
+        <img src="css/img/funcman.jpg" id="img_aguarde" style=" height: 500px; width:650px; border-radius: 10px;">
       </div>
     </div>
   </div>
-  <!--footer inicio-->
-
-  <!--footer fim-->
 
 </body>
 
