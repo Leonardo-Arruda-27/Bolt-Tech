@@ -142,8 +142,26 @@
 </body>
 
 <script>
-    
-   
+
+    function comeco() {
+        const estufas = document.querySelectorAll(".estufas");
+        console.log(estufas)
+        estufas.forEach((estufinha, index) => {
+            if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
+                estufinha.classList.contains("alerta_alto") ||
+                estufinha.classList.contains("alerta_baixo")) {
+                estufas[index].style.display = "flex";
+            } else {
+                estufas[index].style.display = "none";
+            }
+
+        })
+    }
+
+    setTimeout(() => {
+        comeco();
+    }, 1000);
+
     function estufas() {
         const estufas = document.querySelectorAll(".estufas");
         // if (carregar == 10) {
@@ -240,7 +258,7 @@
         if (tipo == "frio") {
 
             estufas.forEach((estufinha, index) => {
-                if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente")) {
+                if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente") || estufinha.classList.contains("alerta_alto")) {
                     estufas[index].style.display = "none";
                 } else {
                     estufas[index].style.display = "flex";
@@ -251,7 +269,7 @@
         if (tipo == "quente") {
 
             estufas.forEach((estufinha, index) => {
-                if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado")) {
+                if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado") || estufinha.classList.contains("alerta_baixo")) {
                     estufas[index].style.display = "none";
                 } else {
                     estufas[index].style.display = "flex";
@@ -277,7 +295,7 @@
         if (tipo == "frio") {
 
             estufas.forEach((estufinha, index) => {
-                if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente")) {
+                if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente") || estufinha.classList.contains("alerta_alto")) {
                     estufas[index].style.display = "none";
                 } else {
                     estufas[index].style.display = "flex";
@@ -288,7 +306,7 @@
         if (tipo == "quente") {
 
             estufas.forEach((estufinha, index) => {
-                if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado")) {
+                if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado") || estufinha.classList.contains("alerta_baixo")) {
                     estufas[index].style.display = "none";
                 } else {
                     estufas[index].style.display = "flex";
@@ -360,7 +378,7 @@
     function alertar(temperatura, idSensor) {
         // padrão para meu alerta
         var limites = {
-            max_temperatura: 27,
+            max_temperatura: 30,
             min_temperatura: 15,
             alerta_tempbaixa: 18,
             alerta_tempalta: 22

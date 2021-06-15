@@ -139,98 +139,115 @@
 
 <script>
 
+  function comeco() {
+    const estufas = document.querySelectorAll(".estufas");
+    console.log(estufas)
+    estufas.forEach((estufinha, index) => {
+      if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
+        estufinha.classList.contains("alerta_alto") ||
+        estufinha.classList.contains("alerta_baixo")) {
+        estufas[index].style.display = "flex";
+      } else {
+        estufas[index].style.display = "none";
+      }
 
+    })
+  }
+
+  setTimeout(() => {
+    comeco();
+  }, 1000);
   function estufas() {
-        const estufas = document.querySelectorAll(".estufas");
-        // if (carregar == 10) {
-        //     console.log(estufas)
-        //     estufas.forEach((estufinha, index) => {
-        //         if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
-        //             estufinha.classList.contains("alerta_alto") ||
-        //             estufinha.classList.contains("alerta_baixo")) {
-        //             estufas[index].style.display = "flex";
-        //         } else {
-        //             estufas[index].style.display = "none";
-        //         }
+    const estufas = document.querySelectorAll(".estufas");
+    // if (carregar == 10) {
+    //     console.log(estufas)
+    //     estufas.forEach((estufinha, index) => {
+    //         if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
+    //             estufinha.classList.contains("alerta_alto") ||
+    //             estufinha.classList.contains("alerta_baixo")) {
+    //             estufas[index].style.display = "flex";
+    //         } else {
+    //             estufas[index].style.display = "none";
+    //         }
 
-        //     })
-        // }
+    //     })
+    // }
 
-        if (selecao.value == "todas") {
+    if (selecao.value == "todas") {
 
-            estufas.forEach((estufinha, index) => {
-                if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
-                    estufinha.classList.contains("alerta_alto") ||
-                    estufinha.classList.contains("alerta_baixo")) {
-                    estufas[index].style.display = "flex";
-                } else {
-                    estufas[index].style.display = "none";
-                }
-
-            })
-        }
-        if (selecao.value == 1) {
-
-            estufas.forEach((estufinha, index) => {
-                if (index == 0) {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "flex";
-                } else {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "none";
-                }
-            })
-        }
-        if (selecao.value == 2) {
-
-            estufas.forEach((estufinha, index) => {
-                if (index == 1) {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "flex";
-                } else {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "none";
-                }
-            })
-        }
-        if (selecao.value == 3) {
-
-            estufas.forEach((estufinha, index) => {
-                if (index == 2) {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "flex";
-                } else {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "none";
-                }
-            })
-        }
-        if (selecao.value == 4) {
-
-            estufas.forEach((estufinha, index) => {
-                if (index == 3) {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "flex";
-                } else {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "none";
-                }
-            })
-        }
-        if (selecao.value == 5) {
-
-            estufas.forEach((estufinha, index) => {
-                if (index == 4) {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "flex";
-                } else {
-                    console.log(selecao.value)
-                    estufas[index].style.display = "none";
-                }
-            })
+      estufas.forEach((estufinha, index) => {
+        if (estufinha.classList.contains("gelado") || estufinha.classList.contains("quente") ||
+          estufinha.classList.contains("alerta_alto") ||
+          estufinha.classList.contains("alerta_baixo")) {
+          estufas[index].style.display = "flex";
+        } else {
+          estufas[index].style.display = "none";
         }
 
+      })
     }
+    if (selecao.value == 1) {
+
+      estufas.forEach((estufinha, index) => {
+        if (index == 0) {
+          console.log(selecao.value)
+          estufas[index].style.display = "flex";
+        } else {
+          console.log(selecao.value)
+          estufas[index].style.display = "none";
+        }
+      })
+    }
+    if (selecao.value == 2) {
+
+      estufas.forEach((estufinha, index) => {
+        if (index == 1) {
+          console.log(selecao.value)
+          estufas[index].style.display = "flex";
+        } else {
+          console.log(selecao.value)
+          estufas[index].style.display = "none";
+        }
+      })
+    }
+    if (selecao.value == 3) {
+
+      estufas.forEach((estufinha, index) => {
+        if (index == 2) {
+          console.log(selecao.value)
+          estufas[index].style.display = "flex";
+        } else {
+          console.log(selecao.value)
+          estufas[index].style.display = "none";
+        }
+      })
+    }
+    if (selecao.value == 4) {
+
+      estufas.forEach((estufinha, index) => {
+        if (index == 3) {
+          console.log(selecao.value)
+          estufas[index].style.display = "flex";
+        } else {
+          console.log(selecao.value)
+          estufas[index].style.display = "none";
+        }
+      })
+    }
+    if (selecao.value == 5) {
+
+      estufas.forEach((estufinha, index) => {
+        if (index == 4) {
+          console.log(selecao.value)
+          estufas[index].style.display = "flex";
+        } else {
+          console.log(selecao.value)
+          estufas[index].style.display = "none";
+        }
+      })
+    }
+
+  }
   function teste(tipo, event) {
 
     const estufas = document.querySelectorAll(".estufas");
@@ -238,7 +255,7 @@
     if (tipo == "frio") {
 
       estufas.forEach((estufinha, index) => {
-        if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente")) {
+        if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente") || estufinha.classList.contains("alerta_alto")) {
           estufas[index].style.display = "none";
         } else {
           estufas[index].style.display = "flex";
@@ -249,7 +266,7 @@
     if (tipo == "quente") {
 
       estufas.forEach((estufinha, index) => {
-        if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado")) {
+        if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado") || estufinha.classList.contains("alerta_baixo")) {
           estufas[index].style.display = "none";
         } else {
           estufas[index].style.display = "flex";
@@ -323,7 +340,7 @@
   function alertar(temperatura, idSensor) {
     // padrão para meu alerta
     var limites = {
-      max_temperatura: 31,
+      max_temperatura: 30,
       min_temperatura: 15,
       alerta_tempbaixa: 18,
       alerta_tempalta: 22
@@ -334,89 +351,89 @@
     // zerar aviso de mensagem
     var mensagem_temperatura = '';
 
-var classe_temperatura = 'alerta';
+    var classe_temperatura = 'alerta';
 
 
-// comparando
-if (temperatura > limites.max_temperatura) {
-    mensagem_temperatura += ' <p class="alertaP">Estufa com temperatura <b>alta </b>!</p>';
-    classe_temperatura = 'alerta alerta-alto';
-}
+    // comparando
+    if (temperatura > limites.max_temperatura) {
+      mensagem_temperatura += ' <p class="alertaP">Estufa com temperatura <b>alta </b>!</p>';
+      classe_temperatura = 'alerta alerta-alto';
+    }
 
-if (temperatura < limites.min_temperatura) {
-    mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>baixa </b>!</p>';
-    classe_temperatura = 'alerta alerta-baixo';
-}
+    if (temperatura < limites.min_temperatura) {
+      mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>baixa </b>!</p>';
+      classe_temperatura = 'alerta alerta-baixo';
+    }
 
-if (temperatura < limites.alerta_tempbaixa && temperatura > limites.min_temperatura) {
-    mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b> em alerta </b>!</p>';
-    classe_temperatura = 'alerta alerta-tempbaixo';
-}
+    if (temperatura < limites.alerta_tempbaixa && temperatura > limites.min_temperatura) {
+      mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b> em alerta </b>!</p>';
+      classe_temperatura = 'alerta alerta-tempbaixo';
+    }
 
-if (temperatura > limites.alerta_tempalta && temperatura < limites.max_temperatura) {
-    mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>em alerta </b>!</p>';
-    classe_temperatura = 'alerta alerta-tempalto';
-}
-
-
-// escolhendo qual alterar
-var div_temperatura_alterar
+    if (temperatura > limites.alerta_tempalta && temperatura < limites.max_temperatura) {
+      mensagem_temperatura = '<p class="alertaP">Estufa com temperatura <b>em alerta </b>!</p>';
+      classe_temperatura = 'alerta alerta-tempalto';
+    }
 
 
-if (idSensor == 1) {
-    div_temperatura_alterar = div_alerta_temperatura
+    // escolhendo qual alterar
+    var div_temperatura_alterar
 
-} else if (idSensor == 2) {
-    div_temperatura_alterar = div_alerta_temperatura2
 
-} else if (idSensor == 3) {
-    div_temperatura_alterar = div_alerta_temperatura3
+    if (idSensor == 1) {
+      div_temperatura_alterar = div_alerta_temperatura
 
-} else if (idSensor == 4) {
-    div_temperatura_alterar = div_alerta_temperatura4
-    // div_alerta_temperatura4.setAttribute("class", "gelado");
+    } else if (idSensor == 2) {
+      div_temperatura_alterar = div_alerta_temperatura2
 
-} else if (idSensor == 5) {
-    div_temperatura_alterar = div_alerta_temperatura5
-}
+    } else if (idSensor == 3) {
+      div_temperatura_alterar = div_alerta_temperatura3
 
-// alterando
-div_temperatura_alterar.innerHTML = mensagem_temperatura;
-div_temperatura_alterar.className = classe_temperatura;
+    } else if (idSensor == 4) {
+      div_temperatura_alterar = div_alerta_temperatura4
+      // div_alerta_temperatura4.setAttribute("class", "gelado");
 
-const estufinhas = document.querySelectorAll(".alerta");
-var estufonas = document.querySelectorAll(".estufas");
-estufinhas.forEach((estufa, index) => {
-    if (estufa.classList.contains("alerta-tempbaixo")) {
+    } else if (idSensor == 5) {
+      div_temperatura_alterar = div_alerta_temperatura5
+    }
+
+    // alterando
+    div_temperatura_alterar.innerHTML = mensagem_temperatura;
+    div_temperatura_alterar.className = classe_temperatura;
+
+    const estufinhas = document.querySelectorAll(".alerta");
+    var estufonas = document.querySelectorAll(".estufas");
+    estufinhas.forEach((estufa, index) => {
+      if (estufa.classList.contains("alerta-tempbaixo")) {
         estufonas[index].classList.remove("normal");
         estufonas[index].classList.remove("quente");
         estufonas[index].classList.remove("gelado");
         estufonas[index].classList.remove("alerta_alto");
         estufonas[index].classList.add("alerta_baixo");
-    }
-    if (estufa.classList.contains("alerta-tempalto")) {
+      }
+      if (estufa.classList.contains("alerta-tempalto")) {
         estufonas[index].classList.remove("normal");
         estufonas[index].classList.remove("quente");
         estufonas[index].classList.remove("gelado");
         estufonas[index].classList.remove("alerta_baixo");
         estufonas[index].classList.add("alerta_alto");
-    }
-    if (estufa.classList.contains("alerta-baixo")) {
+      }
+      if (estufa.classList.contains("alerta-baixo")) {
         estufonas[index].classList.remove("normal");
         estufonas[index].classList.remove("quente");
         estufonas[index].classList.remove("alerta_baixo");
         estufonas[index].classList.remove("alerta_alto");
         estufonas[index].classList.add("gelado");
-    }
+      }
 
-    if (estufa.classList.contains("alerta-alto")) {
+      if (estufa.classList.contains("alerta-alto")) {
         estufonas[index].classList.remove("normal");
         estufonas[index].classList.remove("gelado");
         estufonas[index].classList.remove("alerta_baixo");
         estufonas[index].classList.remove("alerta_alto");
         estufonas[index].classList.add("quente");
-    }
-    if (!(estufa.classList.contains("alerta-alto")) && !(estufa.classList.contains("alerta-baixo")) && !
+      }
+      if (!(estufa.classList.contains("alerta-alto")) && !(estufa.classList.contains("alerta-baixo")) && !
         (estufa.classList.contains("alerta-tempbaixo")) &&
         !(estufa.classList.contains("alerta-tempalto"))) {
         estufonas[index].classList.add("normal");
@@ -424,54 +441,54 @@ estufinhas.forEach((estufa, index) => {
         estufonas[index].classList.remove("alerta_baixo");
         estufonas[index].classList.remove("alerta_alto");
         estufonas[index].classList.remove("quente");
+      }
+
+    })
+
+
+  }
+
+  // só altere aqui se souber o que está fazendo!
+  function atualizarTela(dados, idSensor) {
+
+
+    // escolhendo qual alterar
+    var div_temperatura_alterar
+
+
+    if (idSensor == 1) {
+      div_temperatura_alterar = div_temperatura
+
+    } else if (idSensor == 2) {
+      div_temperatura_alterar = div_temperatura2
+
+    } else if (idSensor == 3) {
+      div_temperatura_alterar = div_temperatura3
+
+    } else if (idSensor == 4) {
+      div_temperatura_alterar = div_temperatura4
+
+    } else if (idSensor == 5) {
+      div_temperatura_alterar = div_temperatura5
     }
 
-})
+    div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
+
+  }
 
 
-}
-
-// só altere aqui se souber o que está fazendo!
-function atualizarTela(dados, idSensor) {
-
-
-// escolhendo qual alterar
-var div_temperatura_alterar
-
-
-if (idSensor == 1) {
-    div_temperatura_alterar = div_temperatura
-
-} else if (idSensor == 2) {
-    div_temperatura_alterar = div_temperatura2
-
-} else if (idSensor == 3) {
-    div_temperatura_alterar = div_temperatura3
-
-} else if (idSensor == 4) {
-    div_temperatura_alterar = div_temperatura4
-
-} else if (idSensor == 5) {
-    div_temperatura_alterar = div_temperatura5
-}
-
-div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
-
-}
-
-
-function sendData() {
-var http = new XMLHttpRequest();
-http.open('GET', 'http://localhost:9001/api/sendData', false);
-http.send(null);
-}
+  function sendData() {
+    var http = new XMLHttpRequest();
+    http.open('GET', 'http://localhost:9001/api/sendData', false);
+    http.send(null);
+  }
 // Descomente abaixo se quiser inserir dados a cada X segundos
-/*  setInterval(() => {
- sendData();
-}, 5000); */
+  /*  setInterval(() => {
+   sendData();
+  }, 5000); */
 
-/*  setInterval(() => {
- window.location.reload(1);
-}, 5000);
-*/
+  /*  setInterval(() => {
+   window.location.reload(1);
+  }, 5000);
+  */
 </script>
