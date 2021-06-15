@@ -35,8 +35,10 @@ a {
   justify-content: center;
   flex-direction: column;
   padding: 32px 0 0 0;
+  width: 180px;
   border-bottom: solid 1px #FEC63E;
 }
+
 .fv32{
   width: 60px;
   animation: logo 5s forwards infinite;
@@ -84,9 +86,10 @@ a {
 .header .usuario {
   width: 75%;
   overflow: hidden;
-  margin: auto;
+  margin: 0 10px 0 10px;
   text-align: center;
-  color: white;
+  color: #FEC63E;
+  font-weight: bold;
 }
 
 .header .usuario h3 {
