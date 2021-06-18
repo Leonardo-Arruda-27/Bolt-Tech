@@ -44,11 +44,11 @@
 
   <div class="dashboard">
     <div class="linkcontst">
-      <a class="linkst" id="frio" href="" onclick="teste('frio',event)">Frias</a>
+      <a class="linkst" id="frio" href="" onclick="btnestufa('frio',event)">Frias</a>
 
-      <a class="linkst" id="quente" href="" onclick="teste('quente',event)">Quente</a>
+      <a class="linkst" id="quente" href="" onclick="btnestufa('quente',event)">Quente</a>
 
-      <a class="linkst" id="todos" href="" onclick="teste('todas',event)">Todas</a>
+      <a class="linkst" id="todos" href="" onclick="btnestufa('todas',event)">Todas</a>
     </div>
 
     <select id="selecao" onchange="estufas()">
@@ -61,6 +61,7 @@
       <option value=5>Estufa 5</option>
     </select>
     <h1 class="ttesfutas"> Estufas: <span id="b_usuario"></span> </h1>
+    <h1 id="id_estadoestufa"></h1>
     <div class="estufa_cont">
 
 
@@ -248,39 +249,69 @@
     }
 
   }
-  function teste(tipo, event) {
-
+  function btnestufa(tipo, event) {
+    setTimeout(() => {
+      id_estadoestufa.classList.add("soom")
+    }, 1500)
+    id_estadoestufa.classList.remove("soom")
     const estufas = document.querySelectorAll(".estufas");
+    const linkst = document.querySelectorAll(".linkst");
+    var plick = Array.from(linkst);
+
+    plick.forEach((p) => {
+      p.classList.remove("acttv")
+    })
+
     event.preventDefault();
     if (tipo == "frio") {
-
+      plick[0].classList.add("acttv")
       estufas.forEach((estufinha, index) => {
+
+
         if (estufinha.classList.contains("normal") || estufinha.classList.contains("quente") || estufinha.classList.contains("alerta_alto")) {
           estufas[index].style.display = "none";
         } else {
           estufas[index].style.display = "flex";
+
+          id_estadoestufa.classList.add("gld");
+          id_estadoestufa.classList.remove("qtd");
+          id_estadoestufa.classList.remove("todas");
         }
-      })
+
+      });
+
     }
 
     if (tipo == "quente") {
-
+      plick[1].classList.add("acttv")
       estufas.forEach((estufinha, index) => {
+
         if (estufinha.classList.contains("normal") || estufinha.classList.contains("gelado") || estufinha.classList.contains("alerta_baixo")) {
           estufas[index].style.display = "none";
         } else {
           estufas[index].style.display = "flex";
+
+          id_estadoestufa.classList.add("qtd");
+          id_estadoestufa.classList.remove("gld");
+          id_estadoestufa.classList.remove("todas");
         }
-      })
+
+      });
+
     }
 
     if (tipo == "todas") {
-
+      plick[2].classList.add("acttv")
       estufas.forEach((estufinha, index) => {
 
         estufas[index].style.display = "flex";
 
-      })
+        id_estadoestufa.classList.add("todas");
+        id_estadoestufa.classList.remove("qtd");
+        id_estadoestufa.classList.remove("gld");
+
+      });
+
     }
 
   }
@@ -482,13 +513,13 @@
     http.open('GET', 'http://localhost:9001/api/sendData', false);
     http.send(null);
   }
-// Descomente abaixo se quiser inserir dados a cada X segundos
-  /*  setInterval(() => {
-   sendData();
-  }, 5000); */
-
-  /*  setInterval(() => {
-   window.location.reload(1);
+  // Descomente abaixo se quiser inserir dados a cada X segundos
+  setInterval(() => {
+    sendData();
   }, 5000);
-  */
+
+  setInterval(() => {
+    window.location.reload(1);
+  }, 5000);
+
 </script>

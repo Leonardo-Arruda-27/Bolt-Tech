@@ -5,7 +5,37 @@ body {
     background-color: #ecf0f1;
 }
 
-
+#id_estadoestufa{
+   opacity: 0;
+    border: 2px #090a0f solid ;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 220px;
+    transition: .3s;
+}
+.acttv{
+    background-color: #FEC63E !important;
+    color: #090a0f !important;
+}
+#id_estadoestufa.qtd{
+    background-color: tomato;
+    opacity: 1;
+}
+#id_estadoestufa.gld{
+    opacity: 1;
+    background-color: cyan;
+}
+#id_estadoestufa.todas{
+    opacity: 1;
+    background-color: #FEC63E;
+}
+#id_estadoestufa.soom{
+    opacity: 0 !important;
+    transition: .4s;
+}
 h1 {
     margin: 0;
     padding: 0;
